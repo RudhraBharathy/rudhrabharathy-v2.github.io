@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+
+import React, { MouseEventHandler, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -7,16 +8,24 @@ export const WobbleCard = ({
   children,
   containerClassName,
   className,
+  customFlexClasses,
+  onMouseEnter,
+  onMouseLeave,
 }: {
   children: React.ReactNode;
   containerClassName?: string;
   className?: string;
+  customFlexClasses?: string;
+  onMouseEnter?: MouseEventHandler<HTMLDivElement>;
+  onMouseLeave?: MouseEventHandler<HTMLDivElement>;
 }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [hasEntered, setHasEntered] = useState(false);
 
-  const handleMouseMove = (event: React.MouseEvent<HTMLElement>) => {
+  const handleMouseMove = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
     const { clientX, clientY } = event;
     const rect = event.currentTarget.getBoundingClientRect();
     const x = Math.round((clientX - (rect.left + rect.width / 2)) / 40);
@@ -26,15 +35,19 @@ export const WobbleCard = ({
 
   return (
     <motion.section
-      onMouseMove={(event) => {
+      onMouseMove={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         if (!hasEntered) setHasEntered(true);
         handleMouseMove(event);
       }}
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => {
+      onMouseEnter={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        setIsHovering(true);
+        if (onMouseEnter) onMouseEnter(event);
+      }}
+      onMouseLeave={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         setIsHovering(false);
         setMousePosition({ x: 0, y: 0 });
         setHasEntered(false);
+        if (onMouseLeave) onMouseLeave(event);
       }}
       style={{
         transform: isHovering
@@ -42,7 +55,7 @@ export const WobbleCard = ({
           : "translate3d(0px, 0px, 0)",
         cursor: "pointer",
         willChange: "transform",
-        transition: hasEntered ? "none" : "transform 0.3s ease-out",
+        transition: `${hasEntered ? "none" : "transform 0.3s ease-out"}`,
       }}
       className={cn(
         "mx-auto w-full relative rounded-2xl overflow-hidden",
@@ -50,7 +63,7 @@ export const WobbleCard = ({
       )}
     >
       <div
-        className="relative h-full [background-image:radial-gradient(88%_100%_at_top,rgba(255,255,255,0.5),rgba(255,255,255,0))] sm:mx-0 sm:rounded-2xl overflow-hidden"
+        className="relative h-full [background-image:radial-gradient(88%_100%_at_top,rgba(255,255,255,38%),rgba(255,255,255,0))] sm:mx-0 sm:rounded-2xl overflow-hidden"
         style={{
           boxShadow:
             "0 10px 32px rgba(34, 42, 53, 0.12), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.05), 0 4px 6px rgba(34, 42, 53, 0.08), 0 24px 108px rgba(47, 48, 55, 0.10)",
@@ -63,9 +76,9 @@ export const WobbleCard = ({
               ? `translate3d(${-mousePosition.x}px, ${-mousePosition.y}px, 0)`
               : "translate3d(0px, 0px, 0)",
             willChange: "transform",
-            transition: hasEntered ? "none" : "transform 0.3s ease-out",
+            transition: `${hasEntered ? "none" : "transform 0.3s ease-out"}`,
           }}
-          className={cn("flex justify-center items-center h-full p-4", className)}
+          className={cn("h-full p-4", className, customFlexClasses)}
         >
           {children}
         </motion.div>
