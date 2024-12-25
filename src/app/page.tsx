@@ -1,4 +1,4 @@
-import { PortfolioCards } from "@/components/PortfolioCards";
+import PortfolioCards  from "@/components/PortfolioCards";
 
 export default function Home() {
   return (

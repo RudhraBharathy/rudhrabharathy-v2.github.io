@@ -65,7 +65,7 @@ export const WobbleCard = ({
             willChange: "transform",
             transition: hasEntered ? "none" : "transform 0.3s ease-out",
           }}
-          className={cn("h-full p-8", className)}
+          className={cn("flex justify-center items-center h-full p-4", className)}
         >
           {children}
         </motion.div>
