@@ -2,7 +2,9 @@
 
 import React, { useState } from "react";
 import { WobbleCard } from "./ui/wobble-card";
-import { GoArrowUpRight } from "react-icons/go";
+import TopRIghtArrow from "./TopRIghtArrow";
+import { GrContactInfo } from "react-icons/gr";
+
 
 const Contact = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -14,25 +16,22 @@ const Contact = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div>
-        <div className="absolute bottom-6 left-6">
-          <h1 className="text-6xl font-nunito text-[#FFFFFF]">
-            Contact
-            <br />
-            Me
-          </h1>
-        </div>
-        <div
-          className="absolute top-2 right-2"
-          style={{
-            top: isHovered ? "0.5rem" : "1rem",
-            right: isHovered ? "0.5rem" : "1rem",
-            transition: "top 0.2s ease, right 0.2s ease",
-          }}
-        >
-          <GoArrowUpRight color="#FFFFFF" size={100} />
-        </div>
+      <div className="absolute bottom-6 left-6">
+        <h1 className="text-6xl font-nunito text-[#FFFFFF]">
+          Contact
+          <br />
+          Me
+        </h1>
+        <p className="text-lg font-nunito text-[#FFFFFF]">
+          Reach out for collaborations!!
+        </p>
       </div>
+      <GrContactInfo
+        className="absolute bottom-6 right-8"
+        size={35}
+        color="#FFFFFF"
+      />
+      <TopRIghtArrow isHovered={isHovered} size={80} />
     </WobbleCard>
   );
 };
