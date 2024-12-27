@@ -65,6 +65,7 @@ module.exports = {
       animation: {
         shimmer: "shimmer 0.5s linear forwards",
         "shimmer-reverse": "shimmer-reverse 0.5s linear forwards",
+        "ping-slow": "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite",
       },
       keyframes: {
         shimmer: {
@@ -82,6 +83,10 @@ module.exports = {
           to: {
             backgroundPosition: "0 0",
           },
+        },
+        ping: {
+          "0%": { transform: "scale(1)", opacity: "1" },
+          "75%, 100%": { transform: "scale(1.5)", opacity: "0" },
         },
       },
     },

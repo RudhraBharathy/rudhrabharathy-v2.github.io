@@ -17,12 +17,12 @@ const Contact = () => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="absolute bottom-6 left-6">
-        <h1 className="text-6xl font-nunito text-[#FFFFFF]">
+        <h1 className="text-6xl text-[#FFFFFF]">
           Contact
           <br />
           Me
         </h1>
-        <p className="text-lg font-nunito text-[#FFFFFF]">
+        <p className="text-lg text-[#FFFFFF]">
           Reach out for collaborations!!
         </p>
       </div>

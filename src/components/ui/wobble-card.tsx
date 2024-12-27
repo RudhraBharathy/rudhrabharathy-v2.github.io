@@ -55,7 +55,7 @@ export const WobbleCard = ({
           : "translate3d(0px, 0px, 0)",
         cursor: "pointer",
         willChange: "transform",
-        transition: `${hasEntered ? "none" : "transform 0.3s ease-out"}`,
+        transition: `${hasEntered ? "none" : "transform 0.07s ease-out"}`,
       }}
       className={cn(
         "mx-auto w-full relative rounded-2xl overflow-hidden",
@@ -76,7 +76,7 @@ export const WobbleCard = ({
               ? `translate3d(${-mousePosition.x}px, ${-mousePosition.y}px, 0)`
               : "translate3d(0px, 0px, 0)",
             willChange: "transform",
-            transition: `${hasEntered ? "none" : "transform 0.3s ease-out"}`,
+            transition: `${hasEntered ? "none" : "transform 0.07s ease-out"}`,
           }}
           className={cn("h-full p-4", className, customFlexClasses)}
         >

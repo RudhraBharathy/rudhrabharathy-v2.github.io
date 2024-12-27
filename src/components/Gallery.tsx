@@ -19,7 +19,7 @@ const Gallery = () => {
     >
       <div className="flex justify-start items-start flex-col absolute bottom-[1.1rem] left-6">
         {momentsText.map((value, index) => (
-          <h1 key={index} className="text-5xl font-nunito text-[#FFFFFF]">
+          <h1 key={index} className="text-5xl text-[#FFFFFF]">
             {value}
           </h1>
         ))}
