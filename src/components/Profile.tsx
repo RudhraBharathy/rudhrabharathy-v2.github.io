@@ -58,7 +58,7 @@ const Profile = () => {
           size={socialMediaIconsSize}
         />
       ),
-      link: "https://www.instagram.com/ig_rudhrabharathy",
+      link: "https://instagram.com/ig_rudhrabharathy",
     },
     {
       icon: (
@@ -102,24 +102,27 @@ const Profile = () => {
           </div>
           <div className="z-10 inline-flex mt-8 justify-start items-center flex-row gap-3">
             {socialMediaIcons.map((item, index) => (
-              <div
-                key={index}
-                className="inline-flex w-14 h-14 hover:animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
-                onMouseEnter={(e) =>
-                  e.currentTarget.classList.add("animate-shimmer")
-                }
-                onMouseLeave={(e) => {
-                  e.currentTarget.classList.remove("animate-shimmer");
-                  e.currentTarget.classList.add("animate-shimmer-reverse");
-                }}
-                onAnimationEnd={(e) => {
-                  if (e.animationName === "shimmer-reverse") {
-                    e.currentTarget.classList.remove("animate-shimmer-reverse");
+              <a target="_blank" key={index} href={item.link}>
+                <div
+                  className="inline-flex w-14 h-14 hover:animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+                  onMouseEnter={(e) =>
+                    e.currentTarget.classList.add("animate-shimmer")
                   }
-                }}
-              >
-                <a href={item.link}>{item.icon}</a>
-              </div>
+                  onMouseLeave={(e) => {
+                    e.currentTarget.classList.remove("animate-shimmer");
+                    e.currentTarget.classList.add("animate-shimmer-reverse");
+                  }}
+                  onAnimationEnd={(e) => {
+                    if (e.animationName === "shimmer-reverse") {
+                      e.currentTarget.classList.remove(
+                        "animate-shimmer-reverse"
+                      );
+                    }
+                  }}
+                >
+                  <div>{item.icon}</div>
+                </div>
+              </a>
             ))}
           </div>
         </div>

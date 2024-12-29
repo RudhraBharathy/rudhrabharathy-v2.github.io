@@ -14,7 +14,7 @@ const experiences = [
   {
     company: "Freelancing",
     role: "Frontend Web Development",
-    duration: "August 2022 - February 2024",
+    duration: "August 2022 - Present",
   },
   {
     company: "ToSpace Pvt. Ltd. | Internship",
