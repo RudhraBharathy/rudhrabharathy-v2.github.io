@@ -10,26 +10,7 @@ import { MdLocalAtm } from "react-icons/md";
 import { IoIosLogIn } from "react-icons/io";
 import { GoWorkflow } from "react-icons/go";
 import { CardStack } from "./ui/card-stack";
-import { cn } from "@/lib/utils";
-
-export const Highlight = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <span
-      className={cn(
-        "font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-700/[0.2] dark:text-emerald-500 px-1 py-0.5",
-        className
-      )}
-    >
-      {children}
-    </span>
-  );
-};
+import { AnimatePresence, motion } from "framer-motion";
 
 const Projects = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -86,9 +67,8 @@ const Projects = () => {
       designation: "Senior Software Engineer",
       content: (
         <p>
-          id: 1, These cards are amazing,{" "}
-          <Highlight>I want to use them</Highlight> in my project. Framer motion
-          is a godsend ngl tbh fam 🙏
+          id: 1, These cards are amazing, I want to use them in my project.
+          Framer motion is a godsend ngl tbh fam 🙏
         </p>
       ),
       githubLink: "https://github.com/ManuArora",
@@ -100,10 +80,9 @@ const Projects = () => {
       designation: "Senior Shitposter",
       content: (
         <p>
-          id: 2, I dont like this Twitter thing,{" "}
-          <Highlight>deleting it right away</Highlight> because yolo. Instead, I
-          would like to call it <Highlight>X.com</Highlight> so that it can
-          easily be confused with adult sites.
+          id: 2, I dont like this Twitter thing, deleting it right away because
+          yolo. Instead, I would like to call it X.com so that it can easily be
+          confused with adult sites.
         </p>
       ),
       githubLink: "https://github.com/elonmusk",
@@ -115,11 +94,9 @@ const Projects = () => {
       designation: "Manager Project Mayhem",
       content: (
         <p>
-          id: 3, The first rule of
-          <Highlight>Fight Club</Highlight> is that you do not talk about fight
-          club. The second rule of
-          <Highlight>Fight club</Highlight> is that you DO NOT TALK about fight
-          club.
+          id: 3, The first rule of Fight Club is that you do not talk about
+          fight club. The second rule of Fight club is that you DO NOT TALK
+          about fight club.
         </p>
       ),
       githubLink: "https://github.com/tylerdurden",
@@ -131,12 +108,10 @@ const Projects = () => {
       designation: "Content Creator",
       content: (
         <p>
-          id: 4, Lorem ipsum dolor sit amet.
-          <Highlight>ipsum dolor</Highlight> Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Dolorum, laudantium.
-          <Highlight>ipsum dolor</Highlight> Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Esse tempora aut modi necessitatibus
-          architecto!
+          id: 4, Lorem ipsum dolor sit amet. ipsum dolor Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Dolorum, laudantium. ipsum dolor
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse tempora
+          aut modi necessitatibus architecto!
         </p>
       ),
       githubLink: "https://github.com/loremipsum",
@@ -148,10 +123,9 @@ const Projects = () => {
       designation: "Full-Stack Developer",
       content: (
         <p>
-          id: 5, Lorem, ipsum dolor sit amet consectetur adipisicing.
-          <Highlight>wet modi necessitat</Highlight>
-          <Highlight>wewt modi necessitat</Highlight> is that you DO NOT TALK
-          about fight club.
+          id: 5, Lorem, ipsum dolor sit amet consectetur adipisicing. wet modi
+          necessitat wewt modi necessitat is that you DO NOT TALK about fight
+          club.
         </p>
       ),
       githubLink: "https://github.com/consectetur",
@@ -166,11 +140,35 @@ const Projects = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="flex items-center justify-center flex-col w-full">
-        <div className="flex items-center justify-center w-full pb-10">
+      <div className="flex items-center justify-center flex-col w-full pb-3">
+        <div
+          className="flex items-center justify-center w-full pb-5"
+          style={{
+            transform: isHovered ? "translateY(-20px)" : "translateY(10px)",
+            transition: ".3s all ease-in",
+          }}
+        >
           <CardStack items={CARDS} activeItemId={selectedItemId} />
         </div>
-        <FloatingDock items={links} onHoverItem={setSelectedItemId} />
+        <AnimatePresence initial={false}>
+          {isHovered ? (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <FloatingDock items={links} onHoverItem={setSelectedItemId} />
+            </motion.div>
+          ) : (
+            <motion.div
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <FloatingDock items={links} onHoverItem={setSelectedItemId} />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
       <TopRightArrow isHovered={isHovered} size={80} />
     </WobbleCard>
