@@ -60,79 +60,6 @@ const Projects = () => {
     },
   ];
 
-  const CARDS = [
-    {
-      id: 1,
-      name: "Manu Arora",
-      designation: "Senior Software Engineer",
-      content: (
-        <p>
-          id: 1, These cards are amazing, I want to use them in my project.
-          Framer motion is a godsend ngl tbh fam 🙏
-        </p>
-      ),
-      githubLink: "https://github.com/ManuArora",
-      externalLink: "https://manuarora.in",
-    },
-    {
-      id: 2,
-      name: "Elon Musk",
-      designation: "Senior Shitposter",
-      content: (
-        <p>
-          id: 2, I dont like this Twitter thing, deleting it right away because
-          yolo. Instead, I would like to call it X.com so that it can easily be
-          confused with adult sites.
-        </p>
-      ),
-      githubLink: "https://github.com/elonmusk",
-      externalLink: "https://x.com",
-    },
-    {
-      id: 3,
-      name: "Tyler Durden",
-      designation: "Manager Project Mayhem",
-      content: (
-        <p>
-          id: 3, The first rule of Fight Club is that you do not talk about
-          fight club. The second rule of Fight club is that you DO NOT TALK
-          about fight club.
-        </p>
-      ),
-      githubLink: "https://github.com/tylerdurden",
-      externalLink: "https://fightclub.com",
-    },
-    {
-      id: 4,
-      name: "Lorem Ipsum",
-      designation: "Content Creator",
-      content: (
-        <p>
-          id: 4, Lorem ipsum dolor sit amet. ipsum dolor Lorem ipsum dolor sit
-          amet consectetur adipisicing elit. Dolorum, laudantium. ipsum dolor
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse tempora
-          aut modi necessitatibus architecto!
-        </p>
-      ),
-      githubLink: "https://github.com/loremipsum",
-      externalLink: "https://loremipsum.io",
-    },
-    {
-      id: 5,
-      name: "Consectetur Adipisicing",
-      designation: "Full-Stack Developer",
-      content: (
-        <p>
-          id: 5, Lorem, ipsum dolor sit amet consectetur adipisicing. wet modi
-          necessitat wewt modi necessitat is that you DO NOT TALK about fight
-          club.
-        </p>
-      ),
-      githubLink: "https://github.com/consectetur",
-      externalLink: "https://adipisicing.dev",
-    },
-  ];
-
   return (
     <WobbleCard
       customFlexClasses="flex justify-center items-end"
@@ -148,26 +75,17 @@ const Projects = () => {
             transition: ".3s all ease-in",
           }}
         >
-          <CardStack items={CARDS} activeItemId={selectedItemId} />
+          <CardStack activeItemId={selectedItemId} />
         </div>
-        <AnimatePresence initial={false}>
-          {isHovered ? (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-            >
-              <FloatingDock items={links} onHoverItem={setSelectedItemId} />
-            </motion.div>
-          ) : (
-            <motion.div
-              initial={{ opacity: 1, y: 0 }}
-              animate={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-            >
-              <FloatingDock items={links} onHoverItem={setSelectedItemId} />
-            </motion.div>
-          )}
+        <AnimatePresence>
+          <motion.div
+            initial={{ opacity: isHovered ? 0 : 1, y: isHovered ? 20 : 0 }}
+            animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 20 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <FloatingDock items={links} onHoverItem={setSelectedItemId} />
+          </motion.div>
         </AnimatePresence>
       </div>
       <TopRightArrow isHovered={isHovered} size={80} />

@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 const DancingScript = localFont({
-  src: "./fonts/DancingScript/DancingScript-Variable.woff2",
+  src: "./fonts/DancingScript-Variable.woff2",
   variable: "--font-dancingscript",
   weight: "100 200 300 400",
 });
@@ -12,7 +12,7 @@ const Nunito = localFont({
   src: "./fonts/Nunito-Variable.woff2",
   variable: "--font-nunito",
   weight: "100 200 300 400 500 600 700 800 900",
-}); 
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",

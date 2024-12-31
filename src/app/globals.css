@@ -13,7 +13,7 @@
 }
 
 .font-nunito {
-  font-family: var(--font-nunito);
+  font-family: var(--font-nunito), sans-serif;
 }
 
 h1,
@@ -23,7 +23,7 @@ h4,
 h5,
 h6,
 p {
-  font-family: var(--font-nunito);
+  font-family: var(--font-nunito), sans-serif;
 }
 
 html {

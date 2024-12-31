@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { ElementType } from "react";
 import { WobbleCard } from "./ui/wobble-card";
 import Image from "next/image";
 import MyImage from "../../public/img2.webp";
@@ -14,62 +14,57 @@ import {
 import { MdMailOutline, MdLocationPin } from "react-icons/md";
 import { IoDocumentText } from "react-icons/io5";
 
+const socialMediaIconsColor = "#FFFFFF";
+const socialMediaIconsSize = 25;
+
+const socialMediaIcons = [
+  {
+    icon: (
+      <FaLinkedinIn color={socialMediaIconsColor} size={socialMediaIconsSize} />
+    ),
+    link: "https://linkedin.com/in/rudhrabharathy",
+  },
+  {
+    icon: (
+      <FaGithub color={socialMediaIconsColor} size={socialMediaIconsSize} />
+    ),
+    link: "https://github.com/RudhraBharathy",
+  },
+  {
+    icon: (
+      <FaXTwitter color={socialMediaIconsColor} size={socialMediaIconsSize} />
+    ),
+    link: "https://twitter.com/RudhraBharathy",
+  },
+  {
+    icon: (
+      <MdMailOutline
+        color={socialMediaIconsColor}
+        size={socialMediaIconsSize}
+      />
+    ),
+    link: "mailto:bharathyganeshan@gmail.com",
+  },
+  {
+    icon: (
+      <FaInstagram color={socialMediaIconsColor} size={socialMediaIconsSize} />
+    ),
+    link: "https://instagram.com/ig_rudhrabharathy",
+  },
+  {
+    icon: (
+      <IoDocumentText
+        color={socialMediaIconsColor}
+        size={socialMediaIconsSize}
+      />
+    ),
+    link: "/Rudhra_Bharathy_Resume.pdf",
+  },
+];
+
 const Profile = () => {
   const words = ["Web Developer", "Freelancer", "Problem Solver"];
 
-  const socialMediaIconsColor = "#FFFFFF";
-  const socialMediaIconsSize = 25;
-
-  const socialMediaIcons = [
-    {
-      icon: (
-        <FaLinkedinIn
-          color={socialMediaIconsColor}
-          size={socialMediaIconsSize}
-        />
-      ),
-      link: "https://linkedin.com/in/rudhrabharathy",
-    },
-    {
-      icon: (
-        <FaGithub color={socialMediaIconsColor} size={socialMediaIconsSize} />
-      ),
-      link: "https://github.com/RudhraBharathy",
-    },
-    {
-      icon: (
-        <FaXTwitter color={socialMediaIconsColor} size={socialMediaIconsSize} />
-      ),
-      link: "https://twitter.com/RudhraBharathy",
-    },
-    {
-      icon: (
-        <MdMailOutline
-          color={socialMediaIconsColor}
-          size={socialMediaIconsSize}
-        />
-      ),
-      link: "mailto:bharathyganeshan@gmail.com",
-    },
-    {
-      icon: (
-        <FaInstagram
-          color={socialMediaIconsColor}
-          size={socialMediaIconsSize}
-        />
-      ),
-      link: "https://instagram.com/ig_rudhrabharathy",
-    },
-    {
-      icon: (
-        <IoDocumentText
-          color={socialMediaIconsColor}
-          size={socialMediaIconsSize}
-        />
-      ),
-      link: "/Rudhra_Bharathy_Resume.pdf",
-    },
-  ];
   return (
     <WobbleCard
       customFlexClasses="flex justify-center items-center"
