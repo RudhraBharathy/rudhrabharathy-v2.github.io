@@ -28,8 +28,8 @@ const Experience = () => {
 
   return (
     <WobbleCard
-      customFlexClasses="flex justify-start items-center"
-      containerClassName="h-full min-h-[400px] bg-[#0b525b] relative"
+      customFlexClasses="h-full flex justify-start items-center"
+      containerClassName="h-full bg-[#0b525b] relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

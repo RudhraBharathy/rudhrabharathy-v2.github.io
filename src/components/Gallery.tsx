@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { WobbleCard } from "./ui/wobble-card";
 import TopRIghtArrow from "./TopRIghtArrow";
-import { IoCameraSharp } from "react-icons/io5";
 import { GrGallery } from "react-icons/gr";
 
 const Gallery = () => {

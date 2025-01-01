@@ -23,7 +23,6 @@ const Projects = () => {
       icon: (
         <TiWeatherPartlySunny className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
     },
 
     {
@@ -32,7 +31,6 @@ const Projects = () => {
       icon: (
         <LuListTodo className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
     },
     {
       itemId: 3,
@@ -40,7 +38,6 @@ const Projects = () => {
       icon: (
         <MdLocalAtm className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
     },
     {
       itemId: 4,
@@ -48,7 +45,6 @@ const Projects = () => {
       icon: (
         <IoIosLogIn className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
     },
     {
       itemId: 5,
@@ -56,14 +52,13 @@ const Projects = () => {
       icon: (
         <GoWorkflow className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
     },
   ];
 
   return (
     <WobbleCard
       customFlexClasses="flex justify-center items-end"
-      containerClassName="h-full bg-[#4d194d] min-h-[400px]"
+      containerClassName="h-full bg-[#4d194d] min-h-[400px] cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

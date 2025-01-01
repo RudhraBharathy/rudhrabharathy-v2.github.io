@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ElementType } from "react";
+import React from "react";
 import { WobbleCard } from "./ui/wobble-card";
 import Image from "next/image";
 import MyImage from "../../public/img2.webp";

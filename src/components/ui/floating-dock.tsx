@@ -20,7 +20,6 @@ export const FloatingDock = ({
     itemId: number;
     title: string;
     icon: React.ReactNode;
-    href: string;
   }[];
   desktopClassName?: string;
   mobileClassName?: string;
@@ -46,7 +45,6 @@ const FloatingDockMobile = ({
     itemId: number;
     title: string;
     icon: React.ReactNode;
-    href: string;
   }[];
   className?: string;
 }) => {
@@ -106,7 +104,6 @@ const FloatingDockDesktop = ({
     itemId: number;
     title: string;
     icon: React.ReactNode;
-    href: string;
   }[];
   className?: string;
   onHoverItem: (itemId: number | null) => void;
@@ -136,16 +133,12 @@ const FloatingDockDesktop = ({
 function IconContainer({
   mouseX,
   itemId,
-  title,
   icon,
-  href,
   onHoverItem,
 }: {
   mouseX: MotionValue;
   itemId: number;
-  title: string;
   icon: React.ReactNode;
-  href: string;
   onHoverItem: (itemId: number | null) => void;
 }) {
   let ref = useRef<HTMLDivElement>(null);
@@ -194,7 +187,7 @@ function IconContainer({
       style={{ width, height }}
       onMouseEnter={() => onHoverItem(itemId)}
       onMouseLeave={() => onHoverItem(itemId)}
-      className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800 flex items-center justify-center relative"
+      className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800 flex items-center justify-center relative cursor-pointer"
     >
       <motion.div
         style={{ width: widthIcon, height: heightIcon }}

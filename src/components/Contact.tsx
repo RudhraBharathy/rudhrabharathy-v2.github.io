@@ -5,7 +5,6 @@ import { WobbleCard } from "./ui/wobble-card";
 import TopRIghtArrow from "./TopRIghtArrow";
 import { GrContactInfo } from "react-icons/gr";
 
-
 const Contact = () => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -16,15 +15,13 @@ const Contact = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="absolute bottom-6 left-6">
+      <div className="flex justify-start items-start flex-col absolute bottom-6 left-6">
         <h1 className="text-6xl text-[#FFFFFF]">
           Contact
           <br />
           Me
         </h1>
-        <p className="text-lg text-[#FFFFFF]">
-          Reach out for collaborations!!
-        </p>
+        <p className="text-lg text-[#FFFFFF]">Reach out for collaborations!!</p>
       </div>
       <GrContactInfo
         className="absolute bottom-6 right-8"
