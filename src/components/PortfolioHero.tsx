@@ -8,35 +8,14 @@ import Experience from "./Experience";
 import Projects from "./Projects";
 import Gallery from "./Gallery";
 import { FollowerPointerCard } from "./ui/following-pointer";
-import Image, { StaticImageData } from "next/image";
-import curImg from "../../public/img2.webp";
 
-const TitleComponent = ({
-  title,
-  avatar,
-}: {
-  title: string;
-  avatar?: StaticImageData;
-}) => (
+const TitleComponent = ({ title }: { title: string }) => (
   <div className="flex space-x-2 items-center">
-    {avatar && (
-      <Image
-        src={avatar}
-        height="20"
-        width="20"
-        alt="thumbnail"
-        className="rounded-full border-2 border-white"
-      />
-    )}
     <p>{title}</p>
   </div>
 );
 
 const PortfolioHero = () => {
-  const [selectedExperienceItemId, setSelectedExperienceItemId] = useState<
-    number | null
-  >(null);
-
   return (
     <div className="grid grid-cols-1 md:grid grid-rows-[1fr_1fr] gap-6 max-w-[100rem] mx-auto w-full">
       <div className="flex gap-6">
@@ -63,13 +42,7 @@ const PortfolioHero = () => {
         <div className="w-8/12">
           <div className="grid grid-cols-[78%_20%] h-full gap-6">
             <Projects />
-            <FollowerPointerCard
-              title={
-                <TitleComponent title={"Click to discover"} avatar={curImg} />
-              }
-            >
-              <Gallery />
-            </FollowerPointerCard>
+            <Gallery />
           </div>
         </div>
       </div>

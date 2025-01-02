@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { WobbleCard } from "./ui/wobble-card";
-import TopRIghtArrow from "./TopRIghtArrow";
+import TopRIghtArrow from "./TopRightArrow";
 import { motion } from "framer-motion";
 
 const experiences = [

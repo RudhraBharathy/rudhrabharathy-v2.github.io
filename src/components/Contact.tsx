@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { WobbleCard } from "./ui/wobble-card";
-import TopRIghtArrow from "./TopRIghtArrow";
+import TopRIghtArrow from "./TopRightArrow";
 import { GrContactInfo } from "react-icons/gr";
 
 const Contact = () => {
@@ -21,7 +21,6 @@ const Contact = () => {
           <br />
           Me
         </h1>
-        <p className="text-lg text-[#FFFFFF]">Reach out for collaborations!!</p>
       </div>
       <GrContactInfo
         className="absolute bottom-6 right-8"

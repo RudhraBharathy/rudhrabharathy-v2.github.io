@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { WobbleCard } from "./ui/wobble-card";
-import TopRightArrow from "./TopRIghtArrow";
+import TopRightArrow from "./TopRightArrow";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { TiWeatherPartlySunny } from "react-icons/ti";
 import { LuListTodo } from "react-icons/lu";
