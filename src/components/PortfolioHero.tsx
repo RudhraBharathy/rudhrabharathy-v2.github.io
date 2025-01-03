@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Skills from "./Skills";
 import Profile from "./Profile";
 import Contact from "./Contact";
@@ -25,6 +25,7 @@ const PortfolioHero = () => {
         <div className="w-2/5">
           <FollowerPointerCard
             title={<TitleComponent title={"Click to view my roots"} />}
+            pointerBgColor={0}
           >
             <Experience />
           </FollowerPointerCard>
@@ -35,6 +36,7 @@ const PortfolioHero = () => {
           <Skills />
           <FollowerPointerCard
             title={<TitleComponent title={"Click to message me"} />}
+            pointerBgColor={1}
           >
             <Contact />
           </FollowerPointerCard>
@@ -45,6 +47,9 @@ const PortfolioHero = () => {
             <Gallery />
           </div>
         </div>
+      </div>
+      <div className="w-full text-white text-center">
+        <p>Made with 💙 by Rudhra Bharathy</p>
       </div>
     </div>
   );

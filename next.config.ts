@@ -7,7 +7,10 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
       },
     ],
+      unoptimized: true,
   },
+  output: 'export',
+  distDir: "build",
 };
 
 export default nextConfig;

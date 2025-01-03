@@ -1,21 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
-import Project1Image1 from "../../../public/projects/weather-forcastify.png";
-import Project1Image2 from "../../../public/projects/ATMCardValidator.png";
-import Project1Image3 from "../../../public/projects/ToDo.png";
-import Project1Image4 from "../../../public/projects/login-register.png";
-import Project1Image5 from "../../../public/projects/InProgress.png";
 
 type Project = {
   id: number;
   name: string;
   description: string;
   techStack: string[];
-  imageLink: StaticImageData;
+  imageLink: string;
   githubLink: string;
   externalLink: string;
 };
@@ -27,7 +22,7 @@ const Projects_Data: Project[] = [
     description:
       "Developed a weather app using OpenWeatherMap API, offering real-time and 5-day forecasts with comprehensive metrics, including temperature, humidity, wind speed, and overall conditions for precise and user-friendly updates.",
     techStack: ["React", "TypeScript", "REST API", "Tailwind CSS"],
-    imageLink: Project1Image1,
+    imageLink: "/projects/weather-forcastify.png",
     githubLink: "https://github.com/RudhraBharathy/weather-forecastify",
     externalLink: "https://weather-forecastify-app.netlify.app/",
   },
@@ -35,9 +30,9 @@ const Projects_Data: Project[] = [
     id: 2,
     name: "ATM Card Validator",
     description:
-      "id: 3, A modern e-commerce website with user authentication, payment gateway integration, and an admin dashboard.",
+      "This application validates 16-digit card numbers using the Luhn algorithm, displays validation steps, and identifies card types (Visa, MasterCard, Rupay).",
     techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    imageLink: Project1Image2,
+    imageLink: "/projects/ATMCardValidator.png",
     githubLink: "https://github.com/RudhraBharathy/ATM-Card-Validator-with-UI",
     externalLink: "https://atmcardvalidator.netlify.app/",
   },
@@ -47,7 +42,7 @@ const Projects_Data: Project[] = [
     description:
       "Created reusable components for a todo app, featuring an intuitive interface and efficient operations to manage tasks, enhancing functionality and improving the overall user experience.",
     techStack: ["React", "JavaScript", "Node", "MongoDB", "CRUD"],
-    imageLink: Project1Image3,
+    imageLink: "/projects/ToDo.png",
     githubLink: "https://github.com/RudhraBharathy/ToDo",
     externalLink: "",
   },
@@ -55,9 +50,9 @@ const Projects_Data: Project[] = [
     id: 4,
     name: "Login & Register Form",
     description:
-      "id: 4, A secure, scalable chat app with real-time messaging, file sharing, and group chats using WebSocket.",
+      "A intuitive login and registration form that allows users to easily sign up, sign in, and manage their accounts with a smooth and responsive interface.",
     techStack: ["React", "JavaScript", "Node", "MySQL"],
-    imageLink: Project1Image4,
+    imageLink: "/projects/login-register.png",
     githubLink: "https://github.com/RudhraBharathy/Login-and-Register-Form",
     externalLink: "",
   },
@@ -65,9 +60,9 @@ const Projects_Data: Project[] = [
     id: 5,
     name: "Collaborative Task Management",
     description:
-      "A task management app with user authentication, real-time updates, and CRUD functionality. Built to enhance productivity through a clean UI and robust backend integration.",
+      "A task management app currently under development, featuring real-time updates, and complete CRUD functionality. Designed to enhance productivity with a clean UI and backend integration.",
     techStack: ["React", "Supabase", "Tailwind CSS", "Zustand"],
-    imageLink: Project1Image5,
+    imageLink: "/projects/InProgress.png",
     githubLink:
       "https://github.com/RudhraBharathy/Collaborative-Task-Management-App",
     externalLink: "",
@@ -84,7 +79,14 @@ export const CardStack = ({
     : Projects_Data[0] || null;
 
   if (!activeCard) {
-    return <div>No projects available.</div>;
+    return (
+      <div className="text-center p-10">
+        <p className="text-lg font-semibold">
+          No projects available right now.
+        </p>
+        <p className="text-sm mt-2">Please check back later for updates!</p>
+      </div>
+    );
   }
 
   return (
@@ -102,8 +104,8 @@ export const CardStack = ({
             className="rounded-xl"
             width={200}
             height={200}
-            src={activeCard.imageLink.src}
-            alt={activeCard.name}
+            src={activeCard.imageLink}
+            alt={`Screenshot of ${activeCard.name}`}
           />
         </div>
 
@@ -120,7 +122,11 @@ export const CardStack = ({
           </div>
           <div className="flex justify-center items-center flex-row gap-4">
             {activeCard.githubLink && (
-              <Link target="_black" href={activeCard.githubLink}>
+              <Link
+                target="_blank"
+                href={activeCard.githubLink}
+                aria-label={`${activeCard.name} Github`}
+              >
                 <div className="flex justify-start items-center flex-row gap-2">
                   <FiGithub size={15} />
                   <h1 className="text-sm">Github</h1>
@@ -128,7 +134,11 @@ export const CardStack = ({
               </Link>
             )}
             {activeCard.externalLink && (
-              <Link target="_black" href={activeCard.externalLink}>
+              <Link
+                target="_blank"
+                href={activeCard.externalLink}
+                aria-label={`${activeCard.name} Website`}
+              >
                 <div className="flex justify-start items-center flex-row gap-2">
                   <FiExternalLink size={15} />
                   <h1 className="text-sm">Website</h1>

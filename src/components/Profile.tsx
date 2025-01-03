@@ -3,7 +3,6 @@
 import React from "react";
 import { WobbleCard } from "./ui/wobble-card";
 import Image from "next/image";
-import MyImage from "../../public/img2.webp";
 import { FlipWords } from "./ui/flip-words";
 import {
   FaGithub,
@@ -75,22 +74,22 @@ const Profile = () => {
           className="rounded-2xl"
           sizes="(max-width: 768px) 10rem, (max-width: 1200px) 50vw, 5rem"
           alt="My Image"
-          src={MyImage.src}
+          src={"/images/img2.webp"}
           width={350}
           height={300}
         />
         <div className="w-7/12 pl-16">
           <div className="flex justify-evenly items-start flex-col gap-4">
-            <p className="text-5xl text-white font-dancing">Hi !! I'm</p>
+            <p className="text-5xl text-white font-dancing">Hi !! I&#39;m</p>
             <h1 className="text-5xl text-white font-dancing font-bold">
               Rudhra Bharathy
             </h1>
             <div className="text-5xl text-white font-dancing">
               A <FlipWords words={words} />
             </div>
-            <div className="flex justify-evenly items-start flex-row gap-2">
+            <div className="flex justify-evenly items-end flex-row gap-2">
               <MdLocationPin color="#FFFFFF" size={30} />
-              <p className="inline-block text-2xl text-white font-nunito">
+              <p className="inline-block text-xl text-white font-nunito">
                 Coimbatore, Tamil Nadu, India
               </p>
             </div>

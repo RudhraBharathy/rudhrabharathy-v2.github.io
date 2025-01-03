@@ -5,13 +5,6 @@ import { WobbleCard } from "./ui/wobble-card";
 import TopRightArrow from "./TopRightArrow";
 import { GrGallery } from "react-icons/gr";
 import { FollowerPointerCard } from "./ui/following-pointer";
-import Img1 from "../../public/Moments/img1.jpeg";
-import Img2 from "../../public/Moments/img2.jpeg";
-import Img3 from "../../public/Moments/img3.jpeg";
-import Img4 from "../../public/Moments/img4.jpeg";
-import Img5 from "../../public/Moments/img5.jpeg";
-import Img6 from "../../public/Moments/img6.jpeg";
-import Img7 from "../../public/Moments/img7.jpeg";
 import Image from "next/image";
 
 const Gallery = () => {
@@ -20,13 +13,13 @@ const Gallery = () => {
   const [showTitle, setShowTitle] = useState(true);
 
   const momentsTextImages = [
-    { id: 0, letter: "M", Image: Img1 },
-    { id: 1, letter: "o", Image: Img2 },
-    { id: 2, letter: "m", Image: Img3 },
-    { id: 3, letter: "e", Image: Img4 },
-    { id: 4, letter: "n", Image: Img5 },
-    { id: 5, letter: "t", Image: Img6 },
-    { id: 6, letter: "s", Image: Img7 },
+    { id: 0, letter: "M", Image: "/moments/img1.jpeg" },
+    { id: 1, letter: "o", Image: "/moments/img2.jpeg" },
+    { id: 2, letter: "m", Image: "/moments/img3.jpeg" },
+    { id: 3, letter: "e", Image: "/moments/img4.jpeg" },
+    { id: 4, letter: "n", Image: "/moments/img5.jpeg" },
+    { id: 5, letter: "t", Image: "/moments/img6.jpeg" },
+    { id: 6, letter: "s", Image: "/moments/img7.jpeg" },
   ];
 
   const avatar =
@@ -41,15 +34,18 @@ const Gallery = () => {
             <p>Click to discover</p>
           </div>
         ) : (
-          <div className="w-[100px] h-[100px] rounded-full overflow-hidden border-2 border-white transition-transform duration-500 ease-in-out transform scale-100">
+          <div className="w-[70px] h-[70px] rounded-full overflow-hidden border-2 border-white transition-transform duration-500 ease-in-out transform scale-100">
             <Image
               src={avatar}
               alt="thumbnail"
               className="object-cover w-full h-full"
+              width={70}
+              height={70}
             />
           </div>
         )
       }
+      pointerBgColor={2}
     >
       <WobbleCard
         customFlexClasses="relative"

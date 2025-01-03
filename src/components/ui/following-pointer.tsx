@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
-
-import { motion, AnimatePresence, useMotionValue } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, MotionValue } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const FollowerPointerCard = ({
   children,
   className,
   title,
+  pointerBgColor,
 }: {
   children: React.ReactNode;
   className?: string;
   title?: string | React.ReactNode;
+  pointerBgColor?: number;
 }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -52,7 +53,14 @@ export const FollowerPointerCard = ({
       className={cn("relative", className)}
     >
       <AnimatePresence>
-        {isInside && <FollowPointer x={x} y={y} title={title} />}
+        {isInside && (
+          <FollowPointer
+            x={x}
+            y={y}
+            title={title}
+            pointerBgColor={pointerBgColor}
+          />
+        )}
       </AnimatePresence>
       {children}
     </div>
@@ -63,19 +71,14 @@ export const FollowPointer = ({
   x,
   y,
   title,
+  pointerBgColor = 0,
 }: {
-  x: any;
-  y: any;
+  x: MotionValue<number>;
+  y: MotionValue<number>;
   title?: string | React.ReactNode;
+  pointerBgColor?: number;
 }) => {
-  const colors = [
-    "var(--sky-500)",
-    "var(--teal-500)",
-    "var(--green-500)",
-    "var(--blue-500)",
-    "var(--red-500)",
-    "var(--yellow-500)",
-  ];
+  const colors = ["#4d194d", "#04447b", "#202c59"];
   return (
     <motion.div
       className="h-4 w-4 rounded-full absolute z-50"
@@ -102,7 +105,8 @@ export const FollowPointer = ({
         fill="currentColor"
         strokeWidth="1"
         viewBox="0 0 16 16"
-        className="h-6 w-6 text-sky-500 transform -rotate-[70deg] -translate-x-[12px] -translate-y-[10px] stroke-white"
+        className={`h-6 w-6 transform -rotate-[70deg] -translate-x-[12px] -translate-y-[10px] stroke-white`}
+        style={{ color: colors[pointerBgColor] }}
         height="1em"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +115,9 @@ export const FollowPointer = ({
       </svg>
       <motion.div
         style={{
-          backgroundColor: colors[Math.floor(Math.random() * colors.length)],
+          top: 18,
+          left: 3,
+          backgroundColor: colors[pointerBgColor],
         }}
         initial={{
           scale: 0.5,
@@ -126,7 +132,7 @@ export const FollowPointer = ({
           opacity: 0,
         }}
         className={
-          "px-2 py-2 bg-neutral-200 text-white whitespace-nowrap min-w-max text-xs rounded-full"
+          "absolute px-2 py-2 text-white whitespace-nowrap min-w-max text-xs rounded-full"
         }
       >
         {title}

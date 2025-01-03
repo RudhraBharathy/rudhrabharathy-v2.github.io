@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { WobbleCard } from "./ui/wobble-card";
-import TopRightArrow from "./TopRightArrow";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { TiWeatherPartlySunny } from "react-icons/ti";
 import { LuListTodo } from "react-icons/lu";
@@ -19,36 +18,30 @@ const Projects = () => {
   const links = [
     {
       itemId: 1,
-      title: "Weather Forcastify",
       icon: (
         <TiWeatherPartlySunny className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
     },
-
     {
       itemId: 2,
-      title: "ToDo",
       icon: (
         <LuListTodo className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
     },
     {
       itemId: 3,
-      title: "ATM Card Validator",
       icon: (
         <MdLocalAtm className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
     },
     {
       itemId: 4,
-      title: "Login & Register Forms",
       icon: (
         <IoIosLogIn className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
     },
     {
       itemId: 5,
-      title: "Collaborative Task Management",
       icon: (
         <GoWorkflow className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
@@ -83,7 +76,6 @@ const Projects = () => {
           </motion.div>
         </AnimatePresence>
       </div>
-      <TopRightArrow isHovered={isHovered} size={80} />
     </WobbleCard>
   );
 };
