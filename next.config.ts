@@ -7,9 +7,8 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
       },
     ],
-      unoptimized: true,
   },
-  output: 'export',
+  // output: "export",
   distDir: "build",
 };
 

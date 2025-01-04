@@ -38,6 +38,7 @@ const Gallery = () => {
             <Image
               src={avatar}
               alt="thumbnail"
+              loading="eager"
               className="object-cover w-full h-full"
               width={70}
               height={70}

@@ -149,7 +149,11 @@ function IconContainer({
   const widthTransform = useTransform(distance, [-100, 0, 100], [40, 60, 40]);
   const heightTransform = useTransform(distance, [-100, 0, 100], [40, 60, 40]);
 
-  const widthTransformIcon = useTransform(distance, [-100, 0, 100], [20, 35, 20]);
+  const widthTransformIcon = useTransform(
+    distance,
+    [-100, 0, 100],
+    [20, 35, 20]
+  );
   const heightTransformIcon = useTransform(
     distance,
     [-100, 0, 100],

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { MouseEventHandler, useState } from "react";
+import React, { MouseEventHandler, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -22,10 +22,23 @@ export const WobbleCard = ({
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [hasEntered, setHasEntered] = useState(false);
+  const [isWobbleEnabled, setIsWobbleEnabled] = useState(true);
+
+  useEffect(() => {
+    const updateWobbleState = () => {
+      setIsWobbleEnabled(window.innerWidth > 768);
+    };
+
+    window.addEventListener("resize", updateWobbleState);
+    updateWobbleState();
+
+    return () => window.removeEventListener("resize", updateWobbleState);
+  }, []);
 
   const handleMouseMove = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
+    if (!isWobbleEnabled) return;
     const { clientX, clientY } = event;
     const rect = event.currentTarget.getBoundingClientRect();
     const x = Math.round((clientX - (rect.left + rect.width / 2)) / 40);
@@ -36,10 +49,12 @@ export const WobbleCard = ({
   return (
     <motion.section
       onMouseMove={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        if (!isWobbleEnabled) return;
         if (!hasEntered) setHasEntered(true);
         handleMouseMove(event);
       }}
       onMouseEnter={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        if (!isWobbleEnabled) return;
         setIsHovering(true);
         if (onMouseEnter) onMouseEnter(event);
       }}
@@ -50,7 +65,7 @@ export const WobbleCard = ({
         if (onMouseLeave) onMouseLeave(event);
       }}
       style={{
-        transform: isHovering
+        transform: isHovering && isWobbleEnabled
           ? `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0)`
           : "translate3d(0px, 0px, 0)",
         willChange: "transform",
@@ -71,7 +86,7 @@ export const WobbleCard = ({
         <Noise />
         <motion.div
           style={{
-            transform: isHovering
+            transform: isHovering && isWobbleEnabled
               ? `translate3d(${-mousePosition.x}px, ${-mousePosition.y}px, 0)`
               : "translate3d(0px, 0px, 0)",
             willChange: "transform",

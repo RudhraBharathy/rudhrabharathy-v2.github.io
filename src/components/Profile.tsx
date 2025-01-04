@@ -72,7 +72,6 @@ const Profile = () => {
       <div className="flex justify-between items-center">
         <Image
           className="rounded-2xl"
-          sizes="(max-width: 768px) 10rem, (max-width: 1200px) 50vw, 5rem"
           alt="My Image"
           src={"/images/img2.webp"}
           width={350}

@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence, useMotionValue, MotionValue } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useMotionValue,
+  MotionValue,
+} from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const FollowerPointerCard = ({
@@ -18,11 +23,23 @@ export const FollowerPointerCard = ({
   const ref = React.useRef<HTMLDivElement>(null);
   const [rect, setRect] = useState<DOMRect | null>(null);
   const [isInside, setIsInside] = useState<boolean>(false);
+  const [isPointerVisible, setIsPointerVisible] = useState<boolean>(true);
 
   useEffect(() => {
     if (ref.current) {
       setRect(ref.current.getBoundingClientRect());
     }
+  }, []);
+
+  useEffect(() => {
+    const updateVisibility = () => {
+      setIsPointerVisible(window.innerWidth > 768);
+    };
+
+    window.addEventListener("resize", updateVisibility);
+    updateVisibility();
+
+    return () => window.removeEventListener("resize", updateVisibility);
   }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -40,6 +57,7 @@ export const FollowerPointerCard = ({
   const handleMouseEnter = () => {
     setIsInside(true);
   };
+
   return (
     <div
       onMouseLeave={handleMouseLeave}
@@ -53,7 +71,7 @@ export const FollowerPointerCard = ({
       className={cn("relative", className)}
     >
       <AnimatePresence>
-        {isInside && (
+        {isInside && isPointerVisible && (
           <FollowPointer
             x={x}
             y={y}

@@ -93,60 +93,72 @@ export const CardStack = ({
     <div className="relative h-60 w-60 md:h-64 md:w-[37rem] text-white cursor-default">
       <motion.div
         key={activeCard.id}
-        className="backdrop-filter backdrop-blur-lg bg-opacity-10 h-60 w-60 md:h-64 md:w-[37rem] rounded-3xl p-5 shadow-2xl border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.3] dark:shadow-white/[0.1] flex justify-between flex-col"
+        className="backdrop-filter backdrop-blur-lg bg-opacity-10 h-60 w-60 md:h-64 md:w-[37rem] rounded-3xl p-5 shadow-2xl border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.3] dark:shadow-white/[0.1] flex"
       >
-        <div className="flex justify-between items-start flex-row gap-3">
-          <div className="flex justify-between items-start flex-col gap-2">
-            <p className="text-2xl font-bold">{activeCard.name}</p>
-            <p className="text-sm">{activeCard.description}</p>
+        <motion.div
+          className="flex justify-between flex-col"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{
+            duration: 0.2,
+            ease: "easeInOut",
+          }}
+        >
+          <div className="flex justify-between items-start flex-row gap-3">
+            <div className="flex justify-between items-start flex-col gap-2">
+              <p className="text-2xl font-bold">{activeCard.name}</p>
+              <p className="text-sm">{activeCard.description}</p>
+            </div>
+            <Image
+              className="rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-200"
+              loading="eager"
+              width={200}
+              height={200}
+              src={activeCard.imageLink}
+              alt={`Screenshot of ${activeCard.name}`}
+            />
           </div>
-          <Image
-            className="rounded-xl"
-            width={200}
-            height={200}
-            src={activeCard.imageLink}
-            alt={`Screenshot of ${activeCard.name}`}
-          />
-        </div>
 
-        <div className="flex justify-between items-center flex-row">
-          <div className="flex justify-center items-center flex-row gap-2">
-            {activeCard.techStack.map((value, index) => (
-              <h1
-                className="text-sm px-2 py-1 border bottom-1 transition-colors rounded-md hover:bg-slate-50/20"
-                key={index}
-              >
-                {value}
-              </h1>
-            ))}
+          <div className="flex justify-between items-center flex-row">
+            <div className="flex justify-center items-center flex-row gap-2">
+              {activeCard.techStack.map((value, index) => (
+                <h1
+                  className="text-sm px-2 py-1 border bottom-1 transition-colors rounded-md hover:bg-slate-50/20"
+                  key={index}
+                >
+                  {value}
+                </h1>
+              ))}
+            </div>
+            <div className="flex justify-center items-center flex-row gap-4">
+              {activeCard.githubLink && (
+                <Link
+                  target="_blank"
+                  href={activeCard.githubLink}
+                  aria-label={`${activeCard.name} Github`}
+                >
+                  <div className="flex justify-start items-center flex-row gap-2">
+                    <FiGithub size={15} />
+                    <h1 className="text-sm">Github</h1>
+                  </div>
+                </Link>
+              )}
+              {activeCard.externalLink && (
+                <Link
+                  target="_blank"
+                  href={activeCard.externalLink}
+                  aria-label={`${activeCard.name} Website`}
+                >
+                  <div className="flex justify-start items-center flex-row gap-2">
+                    <FiExternalLink size={15} />
+                    <h1 className="text-sm">Website</h1>
+                  </div>
+                </Link>
+              )}
+            </div>
           </div>
-          <div className="flex justify-center items-center flex-row gap-4">
-            {activeCard.githubLink && (
-              <Link
-                target="_blank"
-                href={activeCard.githubLink}
-                aria-label={`${activeCard.name} Github`}
-              >
-                <div className="flex justify-start items-center flex-row gap-2">
-                  <FiGithub size={15} />
-                  <h1 className="text-sm">Github</h1>
-                </div>
-              </Link>
-            )}
-            {activeCard.externalLink && (
-              <Link
-                target="_blank"
-                href={activeCard.externalLink}
-                aria-label={`${activeCard.name} Website`}
-              >
-                <div className="flex justify-start items-center flex-row gap-2">
-                  <FiExternalLink size={15} />
-                  <h1 className="text-sm">Website</h1>
-                </div>
-              </Link>
-            )}
-          </div>
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   );
