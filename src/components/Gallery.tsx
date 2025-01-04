@@ -57,7 +57,7 @@ const Gallery = () => {
           setShowTitle(true);
         }}
       >
-        <div className="flex justify-start items-start flex-col absolute bottom-[1.1rem] left-6">
+        <div className="flex justify-start items-start flex-row lg:flex-col absolute bottom-[1.1rem] left-6">
           {momentsTextImages.map((value) => (
             <div
               className="w-full block"

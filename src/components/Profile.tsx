@@ -12,51 +12,31 @@ import {
 } from "react-icons/fa6";
 import { MdMailOutline, MdLocationPin } from "react-icons/md";
 import { IoDocumentText } from "react-icons/io5";
-
-const socialMediaIconsColor = "#FFFFFF";
-const socialMediaIconsSize = 25;
+import Link from "next/link";
 
 const socialMediaIcons = [
   {
-    icon: (
-      <FaLinkedinIn color={socialMediaIconsColor} size={socialMediaIconsSize} />
-    ),
+    icon: <FaLinkedinIn />,
     link: "https://linkedin.com/in/rudhrabharathy",
   },
   {
-    icon: (
-      <FaGithub color={socialMediaIconsColor} size={socialMediaIconsSize} />
-    ),
+    icon: <FaGithub />,
     link: "https://github.com/RudhraBharathy",
   },
   {
-    icon: (
-      <FaXTwitter color={socialMediaIconsColor} size={socialMediaIconsSize} />
-    ),
+    icon: <FaXTwitter />,
     link: "https://twitter.com/RudhraBharathy",
   },
   {
-    icon: (
-      <MdMailOutline
-        color={socialMediaIconsColor}
-        size={socialMediaIconsSize}
-      />
-    ),
+    icon: <MdMailOutline />,
     link: "mailto:bharathyganeshan@gmail.com",
   },
   {
-    icon: (
-      <FaInstagram color={socialMediaIconsColor} size={socialMediaIconsSize} />
-    ),
+    icon: <FaInstagram />,
     link: "https://instagram.com/ig_rudhrabharathy",
   },
   {
-    icon: (
-      <IoDocumentText
-        color={socialMediaIconsColor}
-        size={socialMediaIconsSize}
-      />
-    ),
+    icon: <IoDocumentText />,
     link: "/Rudhra_Bharathy_Resume.pdf",
   },
 ];
@@ -67,37 +47,41 @@ const Profile = () => {
   return (
     <WobbleCard
       customFlexClasses="flex justify-center items-center"
-      containerClassName="h-full bg-[#0E3452] min-h-[500px] lg:min-h-[400px]"
+      containerClassName="h-full bg-[#0E3452] lg:min-h-[400px]"
     >
-      <div className="flex justify-between items-center">
+      <div className="w-full flex justify-between items-center flex-col gap-4 sm:flex-row md:flex-col xl:flex-row">
         <Image
-          className="rounded-2xl"
+          className="rounded-2xl sm:w-[250px] md:w-[350px]"
           alt="My Image"
           src={"/images/img2.webp"}
           width={350}
           height={300}
         />
-        <div className="w-7/12 pl-16">
-          <div className="flex justify-evenly items-start flex-col gap-4">
-            <p className="text-5xl text-white font-dancing">Hi !! I&#39;m</p>
-            <h1 className="text-5xl text-white font-dancing font-bold">
-              Rudhra Bharathy
-            </h1>
-            <div className="text-5xl text-white font-dancing">
-              A <FlipWords words={words} />
+        <div className="2xs:w-full xxs:w-[350px] xl:w-7/12">
+          <div className="flex flex-col gap-6 md:gap-8 items-start">
+            <div className="text-white text-3xl md:text-4xl">
+              <p className="pt-2 font-dancing">Hi !! I'm</p>
+              <h1 className="pt-2 font-bold font-dancing">Rudhra Bharathy</h1>
+              <div className="pt-2 font-dancing">
+                A <FlipWords words={words} />
+              </div>
             </div>
-            <div className="flex justify-evenly items-end flex-row gap-2">
-              <MdLocationPin color="#FFFFFF" size={30} />
-              <p className="inline-block text-xl text-white font-nunito">
+            <div className="flex items-center gap-3">
+              <MdLocationPin className="text-xl sm:text-2xl md:text-3xl text-white" />
+              <p className="text-base sm:text-lg md:text-xl text-white font-nunito">
                 Coimbatore, Tamil Nadu, India
               </p>
             </div>
           </div>
-          <div className="z-10 inline-flex mt-8 justify-start items-center flex-row gap-3">
+          <div className="z-10 inline-flex 2xs:mt-4 mt-8 justify-start items-center flex-wrap gap-2 outline-none">
             {socialMediaIcons.map((item, index) => (
-              <a target="_blank" key={index} href={item.link}>
+              <Link
+                target="_blank"
+                key={index}
+                href={item.link}
+              >
                 <div
-                  className="inline-flex w-14 h-14 hover:animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+                  className="2xs:w-10 2xs:h-10 md:w-12 md:h-12 xl:w-16 xl:h-16 inline-flex w-14 h-14  hover:animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium text-slate-400 transition-all duration-300"
                   onMouseEnter={(e) =>
                     e.currentTarget.classList.add("animate-shimmer")
                   }
@@ -113,9 +97,11 @@ const Profile = () => {
                     }
                   }}
                 >
-                  <div>{item.icon}</div>
+                  <div className="text-white 2xs:text-base md:text-2xl ltext-2xl">
+                    {item.icon}
+                  </div>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

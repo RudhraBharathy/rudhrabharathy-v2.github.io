@@ -17,12 +17,12 @@ const TitleComponent = ({ title }: { title: string }) => (
 
 const PortfolioHero = () => {
   return (
-    <div className="grid grid-cols-1 md:grid grid-rows-[1fr_1fr] gap-6 max-w-[100rem] mx-auto w-full">
-      <div className="flex gap-6">
-        <div className="w-3/5">
+    <div className="grid grid-cols-1 md:grid-rows-[1fr_auto] gap-6 max-w-[100rem] mx-auto w-full">
+      <div className="flex flex-col md:flex-row gap-6">
+        <div className="w-full md:w-3/5">
           <Profile />
         </div>
-        <div className="w-2/5">
+        <div className="w-full md:w-2/5">
           <FollowerPointerCard
             title={<TitleComponent title={"Click to view my roots"} />}
             pointerBgColor={0}
@@ -31,8 +31,8 @@ const PortfolioHero = () => {
           </FollowerPointerCard>
         </div>
       </div>
-      <div className="flex gap-6">
-        <div className="w-4/12 min-h-[100px] flex flex-col gap-6">
+      <div className="flex flex-col lg:flex-row gap-6">
+        <div className="w-full lg:w-4/12 min-h-[100px] flex flex-col gap-6">
           <Skills />
           <FollowerPointerCard
             title={<TitleComponent title={"Click to message me"} />}
@@ -41,10 +41,12 @@ const PortfolioHero = () => {
             <Contact />
           </FollowerPointerCard>
         </div>
-        <div className="w-8/12">
-          <div className="grid grid-cols-[78%_20%] h-full gap-6">
+        <div className="w-full lg:w-8/12">
+          <div className="grid grid-cols-1 lg:grid-cols-[78%_20%] h-full gap-6">
             <Projects />
-            <Gallery />
+            <div className="min-h-[195px]">
+              <Gallery />
+            </div>
           </div>
         </div>
       </div>

@@ -38,6 +38,12 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   background-color: black;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+a:focus {
+  outline: none;
 }
 
 @layer base {

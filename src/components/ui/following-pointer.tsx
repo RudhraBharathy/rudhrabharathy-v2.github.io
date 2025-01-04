@@ -33,7 +33,7 @@ export const FollowerPointerCard = ({
 
   useEffect(() => {
     const updateVisibility = () => {
-      setIsPointerVisible(window.innerWidth > 768);
+      setIsPointerVisible(window.innerWidth > 1280);
     };
 
     window.addEventListener("resize", updateVisibility);

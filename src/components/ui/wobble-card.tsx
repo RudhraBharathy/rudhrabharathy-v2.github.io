@@ -26,7 +26,7 @@ export const WobbleCard = ({
 
   useEffect(() => {
     const updateWobbleState = () => {
-      setIsWobbleEnabled(window.innerWidth > 768);
+      setIsWobbleEnabled(window.innerWidth > 1280);
     };
 
     window.addEventListener("resize", updateWobbleState);

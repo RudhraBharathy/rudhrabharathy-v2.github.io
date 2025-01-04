@@ -10,8 +10,6 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-
-    // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: ["class", "class"],
@@ -90,6 +88,17 @@ module.exports = {
           "0%": { transform: "scale(1)", opacity: "1" },
           "75%, 100%": { transform: "scale(1.5)", opacity: "0" },
         },
+      },
+      screens: {
+        '2xs': '300px',
+        'xxs': '415px',
+        'xs': '480px',// Extra small 
+        'sm': '640px',// Small devices
+        'md': '768px',// Medium devices
+        'lg': '1024px',// Large devices
+        'xl': '1280px',// Extra large devices
+        '2xl': '1536px',// Default breakpoint
+        '3xl': '1920px',// ery large screens
       },
     },
   },
