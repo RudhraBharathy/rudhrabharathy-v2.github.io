@@ -97,7 +97,7 @@ const Profile = () => {
                     }
                   }}
                 >
-                  <div className="text-white 2xs:text-base md:text-2xl ltext-2xl">
+                  <div className="text-white 2xs:text-base md:text-2xl xl:text-3xl">
                     {item.icon}
                   </div>
                 </div>

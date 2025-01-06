@@ -33,7 +33,7 @@ const Experience = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="pl-12">
+      <div className="pl-5 xl:pl-12">
         <div className="flex justify-start items-start flex-col">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -41,9 +41,6 @@ const Experience = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-4"
           >
-            <h2 className="text-2xl text-left font-bold text-white">
-              My Journey
-            </h2>
           </motion.div>
           <div className="relative border-l border-gray-300/50">
             {experiences.map((exp, index) => (
@@ -51,6 +48,7 @@ const Experience = () => {
                 key={index}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 className="mb-6 pl-7"
               >
@@ -59,11 +57,15 @@ const Experience = () => {
                     <span className="w-4 h-4 bg-gray-100/80 rounded-full"></span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white">
+                    <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">
                       {exp.company}
                     </h3>
-                    <p className="text-lg italic text-white">{exp.role}</p>
-                    <p className="text-sm text-white">{exp.duration}</p>
+                    <p className="text-sm sm:text-base md:text-lg italic text-white">
+                      {exp.role}
+                    </p>
+                    <p className="text-xs sm:text-sm md:text-base text-white">
+                      {exp.duration}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -71,7 +73,7 @@ const Experience = () => {
           </div>
         </div>
       </div>
-      <TopRIghtArrow isHovered={isHovered} size={80} />
+      <TopRIghtArrow isHovered={isHovered} />
     </WobbleCard>
   );
 };

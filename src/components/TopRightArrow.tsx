@@ -3,10 +3,9 @@ import { GoArrowUpRight } from "react-icons/go";
 
 interface TopRightArrowProps {
   isHovered: boolean;
-  size: number;
 }
 
-const TopRightArrow: React.FC<TopRightArrowProps> = ({ isHovered, size }) => {
+const TopRightArrow: React.FC<TopRightArrowProps> = ({ isHovered }) => {
   return (
     <div
       className="absolute"
@@ -16,7 +15,7 @@ const TopRightArrow: React.FC<TopRightArrowProps> = ({ isHovered, size }) => {
         transition: "top 0.2s ease, right 0.2s ease",
       }}
     >
-      <GoArrowUpRight color="#FFFFFF" size={size} />
+      <GoArrowUpRight color="#FFFFFF" className={`text-6xl`} />
     </div>
   );
 };

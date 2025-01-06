@@ -15,19 +15,19 @@ const Contact = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="flex justify-start items-start flex-col absolute bottom-6 left-6">
-        <h1 className="text-6xl text-[#FFFFFF]">
+      <div className="flex justify-start items-start flex-col absolute bottom-4 left-4 sm:bottom-6 sm:left-6">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#FFFFFF] leading-tight">
           Contact
           <br />
           Me
         </h1>
       </div>
       <GrContactInfo
-        className="absolute bottom-6 right-8"
-        size={35}
+        className="absolute bottom-4 right-4 sm:bottom-6 sm:right-8"
+        size={25}
         color="#FFFFFF"
       />
-      <TopRIghtArrow isHovered={isHovered} size={80} />
+      <TopRIghtArrow isHovered={isHovered} />
     </WobbleCard>
   );
 };

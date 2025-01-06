@@ -7,7 +7,7 @@ import { GrGallery } from "react-icons/gr";
 import { FollowerPointerCard } from "./ui/following-pointer";
 import Image from "next/image";
 
-const Gallery = () => {
+const Moments = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [currentLetterValue, setCurrentLetterValue] = useState<number>(0);
   const [showTitle, setShowTitle] = useState(true);
@@ -85,10 +85,10 @@ const Gallery = () => {
           size={30}
           color="#FFFFFF"
         />
-        <TopRightArrow isHovered={isHovered} size={50} />
+        <TopRightArrow isHovered={isHovered} />
       </WobbleCard>
     </FollowerPointerCard>
   );
 };
 
-export default Gallery;
+export default Moments;
