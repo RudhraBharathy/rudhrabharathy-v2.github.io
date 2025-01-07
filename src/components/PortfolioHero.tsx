@@ -17,12 +17,12 @@ const TitleComponent = ({ title }: { title: string }) => (
 
 const PortfolioHero = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-rows-[1fr_auto] gap-6 max-w-[100rem] mx-auto w-full">
-      <div className="flex flex-col md:flex-row gap-6">
-        <div className="w-full md:w-1/2 lg:w-3/5">
+    <div className="grid grid-cols-1 lg:grid-rows-[1fr_auto] gap-6 max-w-[100rem] mx-auto w-full h-full min-h-[90vh]">
+      <div className="flex flex-col lg:flex-row gap-6 h-full">
+        <div className="w-full lg:w-3/5 flex flex-col justify-center">
           <Profile />
         </div>
-        <div className="w-full md:w-1/2 lg:w-2/5">
+        <div className="w-full lg:w-2/5 flex flex-col justify-center">
           <FollowerPointerCard
             title={<TitleComponent title={"Click to view my roots"} />}
             pointerBgColor={0}
@@ -31,12 +31,12 @@ const PortfolioHero = () => {
           </FollowerPointerCard>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row gap-6">
-        <div className="w-full lg:w-4/12 min-h-[100px] flex flex-col md:flex-row lg:flex-col gap-6">
-          <div className="md:w-1/2 lg:w-full">
+      <div className="flex flex-col lg:flex-row gap-6 h-full">
+        <div className="w-full lg:w-4/12 flex flex-col md:flex-row lg:flex-col gap-6">
+          <div className="md:w-1/2 lg:w-full flex flex-col justify-center">
             <Skills />
           </div>
-          <div className="md:w-1/2 lg:w-full">
+          <div className="md:w-1/2 lg:w-full flex flex-col justify-center">
             <FollowerPointerCard
               title={<TitleComponent title={"Click to message me"} />}
               pointerBgColor={1}
@@ -48,7 +48,7 @@ const PortfolioHero = () => {
         <div className="w-full lg:w-8/12">
           <div className="grid grid-cols-1 lg:grid-cols-[78%_20%] h-full gap-6">
             <Projects />
-            <div className="min-h-[195px]">
+            <div className="">
               <Moments />
             </div>
           </div>

@@ -50,7 +50,7 @@ const Moments = () => {
     >
       <WobbleCard
         customFlexClasses="relative"
-        containerClassName="h-full bg-[#581f18]"
+        containerClassName="min-h-[150px] h-full bg-[#581f18]"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => {
           setIsHovered(false);
@@ -72,7 +72,7 @@ const Moments = () => {
               }}
             >
               <h1
-                className="text-5xl text-[#FFFFFF] transition-transform duration-300 ease-in-out hover:scale-125"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#FFFFFF] transition-transform duration-300 ease-in-out xl:hover:scale-125"
                 aria-label={`Letter ${value.letter}`}
               >
                 {value.letter}
@@ -81,7 +81,7 @@ const Moments = () => {
           ))}
         </div>
         <GrGallery
-          className="absolute bottom-6 right-6 transition-transform duration-300 ease-in-out hover:scale-110"
+          className="absolute bottom-6 right-6"
           size={30}
           color="#FFFFFF"
         />

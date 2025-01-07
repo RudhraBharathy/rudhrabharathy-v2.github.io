@@ -49,7 +49,7 @@ const Profile = () => {
       customFlexClasses="flex justify-center items-center"
       containerClassName="h-full bg-[#0E3452] lg:min-h-[400px]"
     >
-      <div className="w-full flex justify-between items-center flex-col gap-4 sm:flex-row md:flex-col xl:flex-row">
+      <div className="w-full flex justify-between items-center flex-col gap-4 sm:flex-row">
         <Image
           className="rounded-2xl sm:w-[250px] md:w-[350px]"
           alt="My Image"

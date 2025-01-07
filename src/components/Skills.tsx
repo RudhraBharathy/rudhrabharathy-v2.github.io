@@ -27,7 +27,7 @@ const Skills = () => {
   return (
     <WobbleCard
       customFlexClasses="flex justify-center items-center"
-      containerClassName="min-h-[190px] bg-[#7c162e]"
+      containerClassName="min-h-[150px] lg:min-h-[195px] bg-[#7c162e]"
     >
       <div className="flex flex-wrap justify-center items-center sm:gap-2 xl:gap-1 cursor-pointer">
         {icons.map((icon, index) => (
