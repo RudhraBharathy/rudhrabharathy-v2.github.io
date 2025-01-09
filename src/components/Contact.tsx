@@ -1,12 +1,24 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { WobbleCard } from "./ui/wobble-card";
 import TopRIghtArrow from "./TopRightArrow";
 import { GrContactInfo } from "react-icons/gr";
 
 const Contact = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const updateScreenSize = () => {
+      setIsSmallScreen(window.innerWidth < 768);
+    };
+
+    updateScreenSize();
+    window.addEventListener("resize", updateScreenSize);
+
+    return () => window.removeEventListener("resize", updateScreenSize);
+  }, []);
 
   return (
     <WobbleCard
@@ -18,7 +30,7 @@ const Contact = () => {
       <div className="flex justify-start items-start flex-col absolute bottom-4 left-4 sm:bottom-6 sm:left-6">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#FFFFFF] leading-tight">
           Contact
-          {window.innerWidth < 768 ? <> </> : <br></br>}
+          {isSmallScreen ? <> </> : <br />}
           Me
         </h1>
       </div>
