@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { WobbleCard } from "./ui/wobble-card";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { TiWeatherPartlySunny } from "react-icons/ti";
@@ -14,6 +14,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const Projects = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [selectedItemId, setSelectedItemId] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   const links = [
     {
@@ -48,6 +49,16 @@ const Projects = () => {
     },
   ];
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <WobbleCard
       customFlexClasses="flex justify-center items-end"
@@ -67,8 +78,14 @@ const Projects = () => {
         </div>
         <AnimatePresence>
           <motion.div
-            initial={{ opacity: isHovered ? 0 : 1, y: isHovered ? 20 : 0 }}
-            animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 20 }}
+            initial={{
+              opacity: isMobile || isHovered ? 1 : 0,
+              y: isMobile || isHovered ? 0 : 20,
+            }}
+            animate={{
+              opacity: isMobile || isHovered ? 1 : 0,
+              y: isMobile || isHovered ? 0 : 20,
+            }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
