@@ -11,6 +11,7 @@ export const WobbleCard = ({
   customFlexClasses,
   onMouseEnter,
   onMouseLeave,
+  onClick,
 }: {
   children: React.ReactNode;
   containerClassName?: string;
@@ -18,6 +19,7 @@ export const WobbleCard = ({
   customFlexClasses?: string;
   onMouseEnter?: MouseEventHandler<HTMLDivElement>;
   onMouseLeave?: MouseEventHandler<HTMLDivElement>;
+  onClick?: MouseEventHandler<HTMLDivElement>;
 }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -65,9 +67,10 @@ export const WobbleCard = ({
         if (onMouseLeave) onMouseLeave(event);
       }}
       style={{
-        transform: isHovering && isWobbleEnabled
-          ? `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0)`
-          : "translate3d(0px, 0px, 0)",
+        transform:
+          isHovering && isWobbleEnabled
+            ? `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0)`
+            : "translate3d(0px, 0px, 0)",
         willChange: "transform",
         transition: `${hasEntered ? "none" : "transform 0.07s ease-out"}`,
       }}
@@ -75,6 +78,7 @@ export const WobbleCard = ({
         "mx-auto h-full w-full rounded-2xl overflow-hidden",
         containerClassName
       )}
+      onClick={onClick}
     >
       <div
         className="relative h-full [background-image:radial-gradient(88%_100%_at_top,rgba(255,255,255,38%),rgba(255,255,255,0))] sm:mx-0 sm:rounded-2xl overflow-hidden"
@@ -86,9 +90,10 @@ export const WobbleCard = ({
         <Noise />
         <motion.div
           style={{
-            transform: isHovering && isWobbleEnabled
-              ? `translate3d(${-mousePosition.x}px, ${-mousePosition.y}px, 0)`
-              : "translate3d(0px, 0px, 0)",
+            transform:
+              isHovering && isWobbleEnabled
+                ? `translate3d(${-mousePosition.x}px, ${-mousePosition.y}px, 0)`
+                : "translate3d(0px, 0px, 0)",
             willChange: "transform",
             transition: `${hasEntered ? "none" : "transform 0.07s ease-out"}`,
           }}

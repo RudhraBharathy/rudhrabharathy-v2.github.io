@@ -54,7 +54,7 @@ const PortfolioHero = () => {
           </div>
         </div>
       </div>
-      <div className="w-full text-white text-center">
+      <div className="2xs:text-sm lg:text-base w-full text-white text-center">
         <p>Made with 💙 by Rudhra Bharathy</p>
       </div>
     </div>

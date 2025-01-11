@@ -20,7 +20,7 @@ const Projects_Data: Project[] = [
     id: 1,
     name: "Weather Forcastify",
     description:
-      "Developed a weather app using OpenWeatherMap API, offering real-time and 5-day forecasts with comprehensive metrics, including temperature, humidity, wind speed, and overall conditions for precise and user-friendly updates.",
+      "Developed a weather app using OpenWeatherMap API, providing real-time and 5-day forecasts with detailed metrics like temperature, humidity, wind speed, and conditions for accurate, user-friendly updates.",
     techStack: ["React", "TypeScript", "REST API", "Tailwind CSS"],
     imageLink: "/projects/weather-forcastify.png",
     githubLink: "https://github.com/RudhraBharathy/weather-forecastify",

@@ -49,13 +49,14 @@ const Moments = () => {
       pointerBgColor={2}
     >
       <WobbleCard
-        customFlexClasses="relative"
+        customFlexClasses="relative 2xs:cursor-default xl:cursor-none"
         containerClassName="min-h-[150px] h-full bg-[#581f18]"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => {
           setIsHovered(false);
           setShowTitle(true);
         }}
+        onClick={() => setIsHovered(true)}
       >
         <div className="flex justify-start items-start flex-row lg:flex-col absolute bottom-[1.1rem] left-6">
           {momentsTextImages.map((value) => (
@@ -72,7 +73,7 @@ const Moments = () => {
               }}
             >
               <h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#FFFFFF] transition-transform duration-300 ease-in-out xl:hover:scale-125"
+                className="text-3xl sm:text-4xl md:text-5xl text-[#FFFFFF] transition-transform duration-300 ease-in-out xl:hover:scale-125"
                 aria-label={`Letter ${value.letter}`}
               >
                 {value.letter}
