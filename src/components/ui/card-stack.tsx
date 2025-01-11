@@ -112,14 +112,16 @@ export const CardStack = ({
               </p>
               <p className="2xs:text-xs text-sm">{activeCard.description}</p>
             </div>
-            <Image
-              className="rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-200 w-full h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
-              loading="eager"
-              width={200}
-              height={200}
-              src={activeCard.imageLink}
-              alt={`Screenshot of ${activeCard.name}`}
-            />
+            <div className="2xs:h-[12rem] lg:h-auto">
+              <Image
+                className="rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-200 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
+                loading="eager"
+                width={200}
+                height={200}
+                src={activeCard.imageLink}
+                alt={`Screenshot of ${activeCard.name}`}
+              />
+            </div>
           </div>
 
           <div className="flex justify-between items-center flex-col lg:flex-row">

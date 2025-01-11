@@ -120,7 +120,7 @@ function IconContainer({
       ref={ref}
       style={{ width: widthSpring, height: heightSpring }}
       onMouseEnter={() => onHoverItem(itemId)}
-      onMouseLeave={() => onHoverItem(null)}
+      onMouseLeave={() => onHoverItem(itemId)}
       className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800 flex items-center justify-center relative cursor-pointer"
     >
       <motion.div
