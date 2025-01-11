@@ -31,7 +31,7 @@ const Projects_Data: Project[] = [
     name: "ATM Card Validator",
     description:
       "This application validates 16-digit card numbers using the Luhn algorithm, displays validation steps, and identifies card types (Visa, MasterCard, Rupay).",
-    techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Motion"],
     imageLink: "/projects/ATMCardValidator.png",
     githubLink: "https://github.com/RudhraBharathy/ATM-Card-Validator-with-UI",
     externalLink: "https://atmcardvalidator.netlify.app/",
@@ -90,10 +90,10 @@ export const CardStack = ({
   }
 
   return (
-    <div className="relative h-60 w-60 md:h-64 md:w-[37rem] text-white cursor-default">
+    <div className="relative 2xs:h-full 2xs:w-full lg:h-60 lg:w-60 md:h-64 md:w-[37rem] text-white cursor-default">
       <motion.div
         key={activeCard.id}
-        className="backdrop-filter backdrop-blur-lg bg-opacity-10 h-60 w-60 md:h-64 md:w-[37rem] rounded-3xl p-5 shadow-2xl border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.3] dark:shadow-white/[0.1] flex"
+        className="backdrop-filter backdrop-blur-lg bg-opacity-10 2xs:h-full 2xs:w-full lg:h-60 lg:w-60 md:h-64 md:w-[37rem] rounded-3xl p-3 lg:p-5 shadow-2xl border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.3] dark:shadow-white/[0.1] flex"
       >
         <motion.div
           className="flex justify-between flex-col"
@@ -105,13 +105,15 @@ export const CardStack = ({
             ease: "easeInOut",
           }}
         >
-          <div className="flex justify-between items-start flex-row gap-3">
+          <div className="w-full flex justify-between items-center flex-col lg:flex-row lg:items-start gap-3 2xs:pb-4 lg:pb-0">
             <div className="flex justify-between items-start flex-col gap-2">
-              <p className="text-2xl font-bold">{activeCard.name}</p>
-              <p className="text-sm">{activeCard.description}</p>
+              <p className="2xs:text-lg text-2xl font-bold">
+                {activeCard.name}
+              </p>
+              <p className="2xs:text-xs text-sm">{activeCard.description}</p>
             </div>
             <Image
-              className="rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-200"
+              className="rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-200 w-full h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
               loading="eager"
               width={200}
               height={200}
@@ -120,11 +122,11 @@ export const CardStack = ({
             />
           </div>
 
-          <div className="flex justify-between items-center flex-row">
-            <div className="flex justify-center items-center flex-row gap-2">
+          <div className="flex justify-between items-center flex-col lg:flex-row">
+            <div className="flex justify-center items-center flex-row gap-2 2xs:pb-4 lg:pb-0">
               {activeCard.techStack.map((value, index) => (
                 <h1
-                  className="text-sm px-2 py-1 border bottom-1 transition-colors rounded-md hover:bg-slate-50/20"
+                  className="2xs:text-[.7rem] 2xs:p-1 lg:text-sm lg:px-2 lg:py-1 border transition-colors rounded-md hover:bg-slate-50/20 leading-none"
                   key={index}
                 >
                   {value}

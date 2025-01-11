@@ -66,7 +66,7 @@ const Projects = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="flex items-center justify-center flex-col w-full pb-3">
+      <div className="flex items-center justify-center flex-col 2xs:gap-5 w-full pb-3">
         <div
           className="flex items-center justify-center w-full pb-5"
           style={{
