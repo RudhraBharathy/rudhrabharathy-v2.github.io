@@ -20,7 +20,7 @@ const Projects_Data: Project[] = [
     id: 1,
     name: "Weather Forcastify",
     description:
-      "Developed a weather app using OpenWeatherMap API, providing real-time and 5-day forecasts with detailed metrics like temperature, humidity, wind speed, and conditions for accurate, user-friendly updates.",
+      "Developed a weather app using Open Weather Map API, offering real-time and 5-day forecasts with detailed metrics like temperature, humidity, wind speed, and conditions for precise, user-friendly updates.",
     techStack: ["React", "TypeScript", "REST API", "Tailwind CSS"],
     imageLink: "/projects/weather-forcastify.png",
     githubLink: "https://github.com/RudhraBharathy/weather-forecastify",
@@ -30,7 +30,7 @@ const Projects_Data: Project[] = [
     id: 2,
     name: "ATM Card Validator",
     description:
-      "This application validates 16-digit card numbers using the Luhn algorithm, displays validation steps, and identifies card types (Visa, MasterCard, Rupay).",
+      "Created a card validator using the Luhn algorithm to validate 16-digit card numbers, display validation steps, and identify card types like Visa, MasterCard, and Rupay for enhanced clarity and accuracy.",
     techStack: ["React", "TypeScript", "Tailwind CSS", "Motion"],
     imageLink: "/projects/ATMCardValidator.png",
     githubLink: "https://github.com/RudhraBharathy/ATM-Card-Validator-with-UI",
@@ -40,7 +40,7 @@ const Projects_Data: Project[] = [
     id: 3,
     name: "ToDo",
     description:
-      "Created reusable components for a todo app, featuring an intuitive interface and efficient operations to manage tasks, enhancing functionality and improving the overall user experience.",
+      "Built a reusable-component-based todo app with an intuitive interface to efficiently manage tasks. Features CRUD operations with smooth functionality to improve task organization, enhancing the overall user experience.",
     techStack: ["React", "JavaScript", "Node", "MongoDB", "CRUD"],
     imageLink: "/projects/ToDo.png",
     githubLink: "https://github.com/RudhraBharathy/ToDo",
@@ -50,7 +50,7 @@ const Projects_Data: Project[] = [
     id: 4,
     name: "Login & Register Form",
     description:
-      "A intuitive login and registration form that allows users to easily sign up, sign in, and manage their accounts with a smooth and responsive interface.",
+      "Developed a responsive login and registration form enabling users to sign up, log in, and manage accounts seamlessly. The interface ensures smooth interaction with secure backend integration for reliability.",
     techStack: ["React", "JavaScript", "Node", "MySQL"],
     imageLink: "/projects/login-register.png",
     githubLink: "https://github.com/RudhraBharathy/Login-and-Register-Form",
@@ -60,7 +60,7 @@ const Projects_Data: Project[] = [
     id: 5,
     name: "Collaborative Task Management",
     description:
-      "A task management app currently under development, featuring real-time updates, and complete CRUD functionality. Designed to enhance productivity with a clean UI and backend integration.",
+      "Developing a task management app with real-time updates and CRUD functionality. Aiming for productivity enhancement through clean UI, seamless backend integration, and collaboration features. Uses state management for efficiency.",
     techStack: ["React", "Supabase", "Tailwind CSS", "Zustand"],
     imageLink: "/projects/InProgress.png",
     githubLink:
@@ -90,13 +90,13 @@ export const CardStack = ({
   }
 
   return (
-    <div className="relative 2xs:h-full 2xs:w-full lg:h-60 lg:w-60 md:h-64 md:w-[37rem] text-white cursor-default">
+    <div className="relative 2xs:h-full 2xs:w-full lg:h-60 lg:w-60 sm:h-64 sm:w-[37rem] text-white cursor-default">
       <motion.div
         key={activeCard.id}
-        className="backdrop-filter backdrop-blur-lg bg-opacity-10 2xs:h-full 2xs:w-full lg:h-60 lg:w-60 md:h-64 md:w-[37rem] rounded-3xl p-3 lg:p-5 shadow-2xl border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.3] dark:shadow-white/[0.1] flex"
+        className="backdrop-filter backdrop-blur-lg bg-opacity-10 2xs:h-full 2xs:w-full lg:h-60 lg:w-60 sm:h-64 sm:w-[37rem] rounded-3xl p-3 lg:p-5 shadow-2xl border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.3] dark:shadow-white/[0.1] flex"
       >
         <motion.div
-          className="flex justify-between flex-col"
+          className="flex justify-between flex-col gap-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -105,16 +105,16 @@ export const CardStack = ({
             ease: "easeInOut",
           }}
         >
-          <div className="w-full flex justify-between items-center flex-col lg:flex-row lg:items-start gap-3 2xs:pb-4 lg:pb-0">
+          <div className="w-full flex justify-between items-center flex-col sm:flex-row sm:items-start gap-3">
             <div className="flex justify-between items-start flex-col gap-2">
               <p className="2xs:text-lg text-2xl font-bold">
                 {activeCard.name}
               </p>
               <p className="2xs:text-xs text-sm">{activeCard.description}</p>
             </div>
-            <div className="2xs:h-[12rem] lg:h-auto">
+            <div className="2xs:h-[12rem] 3xs:h-[13rem] xxs:h-[14rem] sm:h-full sm:w-full">
               <Image
-                className="rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-200 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
+                className="rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-200 w-full"
                 loading="eager"
                 width={200}
                 height={200}
@@ -124,11 +124,11 @@ export const CardStack = ({
             </div>
           </div>
 
-          <div className="flex justify-between items-center flex-col lg:flex-row">
-            <div className="flex justify-center items-center flex-row gap-2 2xs:pb-4 lg:pb-0">
+          <div className="flex justify-between items-center flex-col sm:flex-row">
+            <div className="flex justify-center items-center flex-row gap-2 2xs:pb-4 sm:pb-0">
               {activeCard.techStack.map((value, index) => (
                 <h1
-                  className="2xs:text-[.7rem] 2xs:p-1 lg:text-sm lg:px-2 lg:py-1 border transition-colors rounded-md hover:bg-slate-50/20 leading-none"
+                  className="2xs:text-[.7rem] 2xs:p-1 sm:text-sm sm:px-2 sm:py-1 border transition-colors rounded-md hover:bg-slate-50/20 leading-none"
                   key={index}
                 >
                   {value}

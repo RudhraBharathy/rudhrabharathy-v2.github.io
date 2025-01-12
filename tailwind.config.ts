@@ -91,10 +91,13 @@ module.exports = {
       },
       screens: {
         '2xs': '300px',
+        '3xs': '380px',
         'xxs': '415px',
         'xs': '480px',// Extra small 
         'sm': '640px',// Small devices
         'md': '768px',// Medium devices
+        '2md': '800px',
+        '2xmd': '950px',
         'lg': '1024px',// Large devices
         'xl': '1280px',// Extra large devices
         '2xl': '1536px',// Default breakpoint

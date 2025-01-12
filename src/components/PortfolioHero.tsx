@@ -18,11 +18,11 @@ const TitleComponent = ({ title }: { title: string }) => (
 const PortfolioHero = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-rows-[1fr_auto] gap-6 max-w-[100rem] mx-auto w-full h-full min-h-[90vh]">
-      <div className="flex flex-col lg:flex-row gap-6 h-full">
-        <div className="w-full lg:w-3/5 flex flex-col justify-center">
+      <div className="flex flex-col 2xmd:flex-row gap-6 h-full">
+        <div className="w-full 2xmd:w-4/6 lg:w-3/5 flex flex-col justify-center">
           <Profile />
         </div>
-        <div className="w-full lg:w-2/5 flex flex-col justify-center">
+        <div className="w-full 2xmd:w-2/6 lg:w-2/5 flex flex-col justify-center">
           <FollowerPointerCard
             title={<TitleComponent title={"Click to view my roots"} />}
             pointerBgColor={0}
@@ -46,11 +46,9 @@ const PortfolioHero = () => {
           </div>
         </div>
         <div className="w-full lg:w-8/12">
-          <div className="grid grid-cols-1 lg:grid-cols-[78%_20%] h-full gap-6">
+          <div className="grid grid-cols-1 2md:grid-cols-[4fr_1fr] h-full gap-6">
             <Projects />
-            <div className="">
-              <Moments />
-            </div>
+            <Moments />
           </div>
         </div>
       </div>

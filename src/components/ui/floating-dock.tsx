@@ -159,8 +159,8 @@ function calculateTransforms(distance: MotionValue, isDesktop: boolean) {
   };
 
   const mobile = {
-    width: useTransform(distance, [-100, 0, 100], [30, 40, 30]),
-    height: useTransform(distance, [-100, 0, 100], [30, 40, 30]),
+    width: useTransform(distance, [-100, 0, 100], [30, 50, 30]),
+    height: useTransform(distance, [-100, 0, 100], [30, 50, 30]),
     iconWidth: useTransform(distance, [-100, 0, 100], [15, 20, 15]),
     iconHeight: useTransform(distance, [-100, 0, 100], [15, 20, 15]),
   };
