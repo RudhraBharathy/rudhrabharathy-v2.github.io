@@ -33,10 +33,10 @@ const PortfolioHero = () => {
       </div>
       <div className="flex flex-col lg:flex-row gap-6 h-full">
         <div className="w-full lg:w-4/12 flex flex-col md:flex-row lg:flex-col gap-6">
-          <div className="md:w-1/2 lg:w-full flex flex-col justify-center">
+          <div className="md:w-1/2 lg:w-full lg:h-full flex flex-col justify-center">
             <Skills />
           </div>
-          <div className="md:w-1/2 lg:w-full flex flex-col justify-center">
+          <div className="md:w-1/2 lg:w-full lg:h-full flex flex-col justify-center">
             <FollowerPointerCard
               title={<TitleComponent title={"Click to message me"} />}
               pointerBgColor={1}
@@ -46,7 +46,7 @@ const PortfolioHero = () => {
           </div>
         </div>
         <div className="w-full lg:w-8/12">
-          <div className="grid grid-cols-1 2md:grid-cols-[4fr_1fr] h-full gap-6">
+          <div className="grid grid-cols-1 xl:grid-cols-[4fr_1fr] h-full gap-6">
             <Projects />
             <Moments />
           </div>

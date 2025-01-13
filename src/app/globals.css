@@ -26,12 +26,12 @@ p {
   font-family: var(--font-nunito), sans-serif;
 }
 
-html {
+/* html {
   height: 100%;
 }
 body {
   min-height: 100dvh;
-}
+} */
 
 html,
 body {
@@ -111,7 +111,7 @@ a:focus {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   html {
     overflow-x: hidden;
     overflow-y: hidden;

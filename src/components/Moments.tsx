@@ -58,7 +58,7 @@ const Moments = () => {
         }}
         onClick={() => setIsHovered(true)}
       >
-        <div className="flex justify-start items-start flex-row 2md:flex-col absolute bottom-[1.1rem] left-6">
+        <div className="flex justify-start items-start flex-row xl:flex-col absolute bottom-[1.1rem] left-6">
           {momentsTextImages.map((value) => (
             <div
               className="w-full block"

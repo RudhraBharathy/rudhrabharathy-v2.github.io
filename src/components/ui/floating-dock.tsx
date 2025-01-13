@@ -65,7 +65,7 @@ const FloatingDockDesktop = ({
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    const checkIsDesktop = () => setIsDesktop(window.innerWidth > 785);
+    const checkIsDesktop = () => setIsDesktop(window.innerWidth > 1280);
     checkIsDesktop();
 
     window.addEventListener("resize", checkIsDesktop);
