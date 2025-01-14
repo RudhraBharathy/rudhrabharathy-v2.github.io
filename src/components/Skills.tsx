@@ -29,7 +29,7 @@ const Skills = () => {
       customFlexClasses="flex justify-center items-center"
       containerClassName="min-h-[150px] lg:min-h-[195px] bg-[#7c162e]"
     >
-      <div className="flex flex-wrap justify-center items-center sm:gap-2 xl:gap-1 cursor-pointer">
+      <div className="flex flex-wrap justify-center items-center sm:gap-2 md:gap-1 cursor-pointer">
         {icons.map((icon, index) => (
           <div
             key={index}

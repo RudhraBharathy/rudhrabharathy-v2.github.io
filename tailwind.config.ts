@@ -97,9 +97,11 @@ module.exports = {
         'sm': '640px',// Small devices
         'md': '768px',// Medium devices
         '2md': '800px',
-        '2xmd': '950px',
+        '2xmd': '960px',
         'lg': '1024px',// Large devices
-        'xl': '1280px',// Extra large devices
+        'xl': '1280px',// Extra 
+        // large devices
+        '1xl': '1400px',
         '2xl': '1536px',// Default breakpoint
         '3xl': '1920px',// ery large screens
       },

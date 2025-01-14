@@ -1,60 +1,66 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Skills from "./Skills";
 import Profile from "./Profile";
 import Contact from "./Contact";
 import Experience from "./Experience";
 import Projects from "./Projects";
 import Moments from "./Moments";
-import { FollowerPointerCard } from "./ui/following-pointer";
-
-const TitleComponent = ({ title }: { title: string }) => (
-  <div className="flex space-x-2 items-center">
-    <p>{title}</p>
-  </div>
-);
 
 const PortfolioHero = () => {
+  const [showExpSideCnt, setShowExpSideCnt] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isWithinRange = window.innerWidth >= 800 && window.innerWidth < 960;
+      setShowExpSideCnt(isWithinRange);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div className="grid grid-cols-1 lg:grid-rows-[1fr_auto] gap-6 max-w-[100rem] mx-auto w-full h-full min-h-[90vh]">
-      <div className="flex flex-col 2xmd:flex-row gap-6 h-full">
-        <div className="w-full 2xmd:w-4/6 lg:w-3/5 flex flex-col justify-center">
+    <div className="grid grid-cols-1 lg:grid-rows-[1fr_auto] gap-4 xl:gap-6 max-w-[100rem] mx-auto w-full h-full min-h-[90vh]">
+      <div className="flex flex-col 2xmd:flex-row gap-4 xl:gap-6 h-full">
+        <div className="w-full 2xmd:w-4/6 xl:w-3/5 flex flex-col justify-center">
           <Profile />
         </div>
-        <div className="w-full 2xmd:w-2/6 lg:w-2/5 flex flex-col justify-center">
-          <FollowerPointerCard
-            title={<TitleComponent title={"Click to view my roots"} />}
-            pointerBgColor={0}
-          >
+        <div className="w-full 2xmd:w-2/6 xl:w-2/5 flex flex-col 2md:flex-row gap-4 xl:gap-6 justify-center">
+          <div className="2md:w-1/2 2xmd:w-full">
             <Experience />
-          </FollowerPointerCard>
+          </div>
+          {showExpSideCnt && (
+            <div className="w-full 2md:w-1/2 flex flex-col gap-4 xl:gap-6">
+              <Skills />
+              <Contact />
+            </div>
+          )}
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row gap-6 h-full">
-        <div className="w-full lg:w-4/12 flex flex-col md:flex-row lg:flex-col gap-6">
-          <div className="md:w-1/2 lg:w-full lg:h-full flex flex-col justify-center">
-            <Skills />
-          </div>
-          <div className="md:w-1/2 lg:w-full lg:h-full flex flex-col justify-center">
-            <FollowerPointerCard
-              title={<TitleComponent title={"Click to message me"} />}
-              pointerBgColor={1}
-            >
+      <div className="flex flex-col lg:flex-row gap-4 xl:gap-6 h-full">
+        {!showExpSideCnt && (
+          <div className="w-full lg:w-4/12 flex flex-col md:flex-row lg:flex-col gap-4 xl:gap-6">
+            <div className="md:w-1/2 lg:w-full lg:h-full flex flex-col justify-center">
+              <Skills />
+            </div>
+            <div className="md:w-1/2 lg:w-full lg:h-full flex flex-col justify-center">
               <Contact />
-            </FollowerPointerCard>
+            </div>
           </div>
-        </div>
+        )}
         <div className="w-full lg:w-8/12">
-          <div className="grid grid-cols-1 xl:grid-cols-[4fr_1fr] h-full gap-6">
+          <div className="grid grid-cols-1 xl:grid-cols-[4fr_1fr] h-full gap-4 xl:gap-6">
             <Projects />
             <Moments />
           </div>
         </div>
       </div>
-      <div className="2xs:text-sm lg:text-base w-full text-white text-center">
+      <footer className="2xs:text-sm lg:text-base w-full text-white text-center">
         <p>Made with 💙 by Rudhra Bharathy</p>
-      </div>
+      </footer>
     </div>
   );
 };
