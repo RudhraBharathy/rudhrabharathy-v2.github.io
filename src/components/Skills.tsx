@@ -27,13 +27,13 @@ const Skills = () => {
   return (
     <WobbleCard
       customFlexClasses="flex justify-center items-center"
-      containerClassName="min-h-[150px] lg:min-h-[195px] bg-[#7c162e]"
+      containerClassName="min-h-[150px] 2xl:min-h-[195px] bg-[#7c162e]"
     >
       <div className="flex flex-wrap justify-center items-center sm:gap-2 md:gap-1 cursor-pointer">
         {icons.map((icon, index) => (
           <div
             key={index}
-            className="p-1 xl:p-2 rounded-lg m-1"
+            className="p-1 1xl:p-2 rounded-lg m-1"
             style={{
               backgroundColor: `${icon.color}33`,
               transition: "background-color .1s ease, border .1s ease",
@@ -61,7 +61,7 @@ const Skills = () => {
               src={icon.src}
               width={18}
               height={18}
-              className="2xs:w-7 2xs:h-7 sm:w-8 sm:h-8 w-6 h-6 transition duration-100 ease-in"
+              className="2xs:w-7 2xs:h-7 2xl:w-8 2xl:h-8 w-6 h-6 transition duration-100 ease-in"
               style={{
                 transition: "transform .1s ease-in-out",
               }}

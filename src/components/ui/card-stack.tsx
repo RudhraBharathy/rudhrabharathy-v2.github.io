@@ -90,10 +90,10 @@ export const CardStack = ({
   }
 
   return (
-    <div className="relative 2xs:h-full 2xs:w-full sm:h-64 sm:w-[37rem] text-white cursor-default">
+    <div className="relative 2xs:h-full 2xs:w-full sm:h-72 sm:w-[37rem] text-white cursor-default">
       <motion.div
         key={activeCard.id}
-        className="backdrop-filter backdrop-blur-lg bg-opacity-10 2xs:h-full 2xs:w-full sm:h-64 sm:w-[37rem] rounded-3xl p-3 lg:p-5 shadow-2xl border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.3] dark:shadow-white/[0.1] flex"
+        className="backdrop-filter backdrop-blur-lg bg-opacity-10 2xs:h-full 2xs:w-full sm:h-72 sm:w-[37rem] rounded-3xl p-3 lg:p-5 shadow-2xl border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.3] dark:shadow-white/[0.1] flex"
       >
         <motion.div
           className="flex justify-between flex-col gap-4"
@@ -106,7 +106,7 @@ export const CardStack = ({
           }}
         >
           <div className="w-full flex justify-between items-center flex-col sm:flex-row sm:items-start gap-3">
-            <div className="flex justify-between items-start flex-col gap-2">
+            <div className="flex justify-between items-start flex-col w-full gap-2">
               <p className="2xs:text-lg text-2xl font-bold">
                 {activeCard.name}
               </p>

@@ -24,7 +24,7 @@ const Projects = () => {
   return (
     <WobbleCard
       customFlexClasses="flex justify-center items-end"
-      containerClassName="h-full bg-[#4d194d] min-h-[400px] cursor-pointer"
+      containerClassName="h-full bg-[#4d194d] lg:min-h-[300px] 2xl:min-h-[400px] cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

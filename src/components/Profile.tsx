@@ -59,7 +59,7 @@ const Profile = () => {
         />
         <div className="2xs:w-full xxs:w-[350px] 2xl:w-7/12">
           <div className="flex flex-col gap-6 md:gap-8 2xmd:gap-4 lg:gap-5 xl:gap-6 items-start">
-            <div className="text-white text-3xl md:text-4xl 2xmd:text-3xl lg:text-4xl">
+            <div className="text-white text-3xl md:text-4xl 2xmd:text-3xl lg:text-4xl 2xl:text-5xl">
               <p className="pt-2 font-dancing">Hi !! I'm</p>
               <h1 className="pt-2 font-bold font-dancing">Rudhra Bharathy</h1>
               <div className="pt-2 font-dancing">

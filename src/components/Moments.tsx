@@ -58,7 +58,7 @@ const Moments = () => {
         }}
         onClick={() => setIsHovered(true)}
       >
-        <div className="flex justify-start items-start flex-row xl:flex-col absolute bottom-[1.1rem] left-6">
+        <div className="flex justify-start items-start flex-row 2xmd:flex-col lg:flex-row xl:flex-col absolute bottom-[1.1rem] left-6">
           {momentsTextImages.map((value) => (
             <div
               className="w-full block"
@@ -73,7 +73,7 @@ const Moments = () => {
               }}
             >
               <h1
-                className="text-3xl sm:text-4xl md:text-5xl text-[#FFFFFF] transition-transform duration-300 ease-in-out xl:hover:scale-125"
+                className="text-3xl sm:text-4xl md:text-5xl xl:text-[2.7rem] 2xl:text-5xl text-[#FFFFFF] transition-transform duration-300 ease-in-out xl:hover:scale-125"
                 aria-label={`Letter ${value.letter}`}
               >
                 {value.letter}
