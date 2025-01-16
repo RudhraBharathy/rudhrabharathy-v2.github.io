@@ -28,11 +28,11 @@ const Projects = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="flex items-center justify-center flex-col 2xs:gap-5 w-full pb-3">
+      <div className="flex items-center justify-center flex-col 2xs:gap-5 w-full">
         <div
-          className="flex items-center justify-center w-full pb-5"
+          className="flex items-center justify-center w-full pb-3"
           style={{
-            transform: isHovered ? "translateY(-20px)" : "translateY(10px)",
+            transform: isHovered ? "translateY(-20px)" : "translateY(5px)",
             transition: ".3s all ease-in",
           }}
         >

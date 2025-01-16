@@ -90,10 +90,10 @@ export const CardStack = ({
   }
 
   return (
-    <div className="relative 2xs:h-full 2xs:w-full sm:h-72 sm:w-[37rem] text-white cursor-default">
+    <div className="relative 2xs:h-full 2xs:w-full lg:h-65 lg:w-[33rem] 2xl:h-72 2xl:w-[37rem] text-white cursor-default">
       <motion.div
         key={activeCard.id}
-        className="backdrop-filter backdrop-blur-lg bg-opacity-10 2xs:h-full 2xs:w-full sm:h-72 sm:w-[37rem] rounded-3xl p-3 lg:p-5 shadow-2xl border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.3] dark:shadow-white/[0.1] flex"
+        className="backdrop-filter backdrop-blur-lg bg-opacity-10 2xs:h-full 2xs:w-full lg:h-65 lg:w-[33rem] 2xl:h-72 2xl:w-[37rem] rounded-3xl p-3 lg:p-5 shadow-2xl border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.3] dark:shadow-white/[0.1] flex"
       >
         <motion.div
           className="flex justify-between flex-col gap-4"
@@ -128,7 +128,7 @@ export const CardStack = ({
             <div className="flex justify-center items-center flex-row gap-2 2xs:pb-4 sm:pb-0">
               {activeCard.techStack.map((value, index) => (
                 <h1
-                  className="2xs:text-[.7rem] 2xs:p-1 sm:text-sm sm:px-2 sm:py-1 border transition-colors rounded-md hover:bg-slate-50/20 leading-none"
+                  className="2xs:text-[.7rem] sm:text-sm lg:text-[.7rem] lg:leading-3 2xl:text-sm 2xs:p-1 sm:px-2 sm:py-1 border transition-colors rounded-md hover:bg-slate-50/20 leading-none"
                   key={index}
                 >
                   {value}

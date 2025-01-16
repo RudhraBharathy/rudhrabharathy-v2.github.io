@@ -65,7 +65,7 @@ const FloatingDockDesktop = ({
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    const checkIsDesktop = () => setIsDesktop(window.innerWidth > 1280);
+    const checkIsDesktop = () => setIsDesktop(window.innerWidth > 1024);
     checkIsDesktop();
 
     window.addEventListener("resize", checkIsDesktop);
@@ -79,7 +79,7 @@ const FloatingDockDesktop = ({
       className={cn(
         "mx-auto flex h-14 gap-4 items-end backdrop-filter backdrop-blur-lg rounded-full bg-[#522052] dark:bg-neutral-900 px-3 pb-2 border",
         className,
-        "2xs:h-12 2xs:gap-3 2xs:px-2 2xs:pb-2 lg:h-14 lg:gap-4 lg:px-3 lg:pb-2"
+        "2xs:h-12 2xs:gap-3 2xs:px-2 2xs:pb-2 lg:h-14 lg:px-3 lg:pb-2"
       )}
     >
       {items.map((item) => (
@@ -116,16 +116,32 @@ function IconContainer({
     return val - bounds.x - bounds.width / 2;
   });
 
-  const { width, height, iconWidth, iconHeight } = calculateTransforms(
-    distance,
-    isDesktop
-  );
-
   const springConfig = {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
   };
+
+  const desktopSizes = {
+    width: [40, 60, 40],
+    height: [40, 60, 40],
+    iconWidth: [20, 35, 20],
+    iconHeight: [20, 35, 20],
+  };
+
+  const mobileSizes = {
+    width: [30, 50, 30],
+    height: [30, 50, 30],
+    iconWidth: [15, 20, 15],
+    iconHeight: [15, 20, 15],
+  };
+
+  const sizes = isDesktop ? desktopSizes : mobileSizes;
+
+  const width = useTransform(distance, [-100, 0, 100], sizes.width);
+  const height = useTransform(distance, [-100, 0, 100], sizes.height);
+  const iconWidth = useTransform(distance, [-100, 0, 100], sizes.iconWidth);
+  const iconHeight = useTransform(distance, [-100, 0, 100], sizes.iconHeight);
 
   const widthSpring = useSpring(width, springConfig);
   const heightSpring = useSpring(height, springConfig);
@@ -137,7 +153,7 @@ function IconContainer({
       ref={ref}
       style={{ width: widthSpring, height: heightSpring }}
       onMouseEnter={() => onHoverItem(itemId)}
-      onMouseLeave={() => onHoverItem(itemId)}
+      onMouseLeave={() => onHoverItem(null)}
       className="aspect-square rounded-full bg-gray-200 flex items-center justify-center relative cursor-pointer"
     >
       <motion.div
@@ -148,22 +164,4 @@ function IconContainer({
       </motion.div>
     </motion.div>
   );
-}
-
-function calculateTransforms(distance: MotionValue, isDesktop: boolean) {
-  const desktop = {
-    width: useTransform(distance, [-100, 0, 100], [40, 60, 40]),
-    height: useTransform(distance, [-100, 0, 100], [40, 60, 40]),
-    iconWidth: useTransform(distance, [-100, 0, 100], [20, 35, 20]),
-    iconHeight: useTransform(distance, [-100, 0, 100], [20, 35, 20]),
-  };
-
-  const mobile = {
-    width: useTransform(distance, [-100, 0, 100], [30, 50, 30]),
-    height: useTransform(distance, [-100, 0, 100], [30, 50, 30]),
-    iconWidth: useTransform(distance, [-100, 0, 100], [15, 20, 15]),
-    iconHeight: useTransform(distance, [-100, 0, 100], [15, 20, 15]),
-  };
-
-  return isDesktop ? desktop : mobile;
 }
