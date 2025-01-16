@@ -65,7 +65,7 @@ const FloatingDockDesktop = ({
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    const checkIsDesktop = () => setIsDesktop(window.innerWidth > 1024);
+    const checkIsDesktop = () => setIsDesktop(window.innerWidth > 1400);
     checkIsDesktop();
 
     window.addEventListener("resize", checkIsDesktop);
@@ -79,7 +79,7 @@ const FloatingDockDesktop = ({
       className={cn(
         "mx-auto flex h-14 gap-4 items-end backdrop-filter backdrop-blur-lg rounded-full bg-[#522052] dark:bg-neutral-900 px-3 pb-2 border",
         className,
-        "2xs:h-12 2xs:gap-3 2xs:px-2 2xs:pb-2 lg:h-14 lg:px-3 lg:pb-2"
+        "2xs:h-12 2xs:gap-3 2xs:px-2 2xs:pb-2 1xl:h-14 lg:px-3 lg:pb-2 1xl:pb-[0.6rem]"
       )}
     >
       {items.map((item) => (
@@ -123,8 +123,8 @@ function IconContainer({
   };
 
   const desktopSizes = {
-    width: [40, 60, 40],
-    height: [40, 60, 40],
+    width: [35, 55, 35],
+    height: [35, 55, 35],
     iconWidth: [20, 35, 20],
     iconHeight: [20, 35, 20],
   };

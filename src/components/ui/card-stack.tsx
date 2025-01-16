@@ -90,10 +90,10 @@ export const CardStack = ({
   }
 
   return (
-    <div className="relative 2xs:h-full 2xs:w-full lg:h-65 lg:w-[33rem] 2xl:h-72 2xl:w-[37rem] text-white cursor-default">
+    <div className="relative 2xs:h-full lg:h-[15rem] 2xs:w-full lg:h-65 lg:w-[33rem] 2xl:h-72 2xl:w-[37rem] text-white cursor-default">
       <motion.div
         key={activeCard.id}
-        className="backdrop-filter backdrop-blur-lg bg-opacity-10 2xs:h-full 2xs:w-full lg:h-65 lg:w-[33rem] 2xl:h-72 2xl:w-[37rem] rounded-3xl p-3 lg:p-5 shadow-2xl border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.3] dark:shadow-white/[0.1] flex"
+        className="backdrop-filter backdrop-blur-lg bg-opacity-10 2xs:h-full lg:h-[15rem] 2xs:w-full lg:h-65 lg:w-[33rem] 2xl:h-72 2xl:w-[37rem] rounded-3xl p-3 lg:p-4 2xl:p-5 shadow-2xl border border-neutral-200 dark:border-white/[0.1] shadow-black/[0.3] dark:shadow-white/[0.1] flex"
       >
         <motion.div
           className="flex justify-between flex-col gap-4"
@@ -110,11 +110,13 @@ export const CardStack = ({
               <p className="2xs:text-lg text-2xl font-bold">
                 {activeCard.name}
               </p>
-              <p className="2xs:text-xs sm:text-sm">{activeCard.description}</p>
+              <p className="2xs:text-xs sm:text-sm lg:text-xs 2xl:text-sm">
+                {activeCard.description}
+              </p>
             </div>
-            <div className="2xs:h-[12rem] 3xs:h-[13rem] xxs:h-[14rem] sm:h-full sm:w-full">
+            <div className="2xs:h-[12rem] 3xs:h-[13rem] xxs:h-[14rem] sm:h-full sm:w-full 2md:max-w-80 lg:max-w-full">
               <Image
-                className="rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-200 w-full"
+                className="rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-200 w-full max-w-20rem"
                 loading="eager"
                 width={200}
                 height={200}
