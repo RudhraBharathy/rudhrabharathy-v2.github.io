@@ -38,7 +38,7 @@ const Contact = () => {
         onClick={() => setIsHovered(true)}
       >
         <div className="flex justify-start items-start flex-col absolute bottom-4 left-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl 2xl:text-6xl text-[#FFFFFF] leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl text-[#FFFFFF] leading-tight">
             Contact
             {isSmallScreen ? <> </> : <br />}
             Me

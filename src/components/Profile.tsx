@@ -57,27 +57,27 @@ const Profile = () => {
           width={350}
           height={300}
         />
-        <div className="2xs:w-full xxs:w-[350px] 2xl:w-7/12">
+        <div className="2xs:w-full xxs:w-[350px] 2xl:w-auto">
           <div className="flex flex-col gap-6 md:gap-8 2xmd:gap-4 lg:gap-5 xl:gap-6 items-start">
             <div className="text-white text-3xl md:text-4xl 2xmd:text-3xl lg:text-4xl 2xl:text-5xl">
-              <p className="pt-2 font-dancing">Hi !! I'm</p>
-              <h1 className="pt-2 font-bold font-dancing">Rudhra Bharathy</h1>
-              <div className="pt-2 font-dancing">
+              <p className="pt-2 1xl:pt-3 2xl:pt-4 font-dancing">Hi !! I'm</p>
+              <h1 className="pt-2 1xl:pt-3 2xl:pt-4 font-bold font-dancing">Rudhra Bharathy</h1>
+              <div className="pt-2 1xl:pt-3 2xl:pt-4 font-dancing">
                 A <FlipWords words={words} />
               </div>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <MdLocationPin className="text-xl sm:text-2xl md:text-3xl 2xmd:text-2xl lg:text-3xl text-white" />
               <p className="text-base sm:text-lg md:text-xl 2xmd:text-lg lg:text-xl text-white font-nunito">
                 Coimbatore, Tamil Nadu, India
               </p>
             </div>
           </div>
-          <div className="z-10 inline-flex 2xs:mt-4 mt-8 justify-start items-center flex-wrap gap-2 2xmd:gap-1 lg:gap-2 outline-none">
+          <div className="z-10 inline-flex 2xs:mt-4 2xl:mt-6 justify-start items-center flex-wrap gap-2 2xmd:gap-1 lg:gap-2 outline-none">
             {socialMediaIcons.map((item, index) => (
               <Link target="_blank" key={index} href={item.link}>
                 <div
-                  className="2xs:w-10 2xs:h-10 md:w-12 md:h-12 2xl:w-16 2xl:h-16 inline-flex w-14 h-14  hover:animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium text-slate-400 transition-all duration-300"
+                  className="2xs:w-10 2xs:h-10 md:w-12 md:h-12 2xl:w-14 2xl:h-14 inline-flex w-14 h-14  hover:animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium text-slate-400 transition-all duration-300"
                   onMouseEnter={(e) =>
                     e.currentTarget.classList.add("animate-shimmer")
                   }
@@ -93,7 +93,7 @@ const Profile = () => {
                     }
                   }}
                 >
-                  <div className="text-white 2xs:text-base md:text-2xl 2xl:text-3xl">
+                  <div className="text-white 2xs:text-base md:text-2xl">
                     {item.icon}
                   </div>
                 </div>

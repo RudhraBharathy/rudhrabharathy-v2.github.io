@@ -59,20 +59,20 @@ const Experience = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
-                  className="mb-6 2xmd:mb-4 lg:mb-6 pl-7"
+                  className="mb-6 2xmd:mb-4 lg:mb-6 2xl:mb-7 pl-7"
                 >
                   <div className="group">
                     <div className="absolute -left-[1.05rem] w-8 h-8 rounded-full bg-gray-300/30 flex items-center justify-center group-hover:animate-ping-slow">
                       <span className="w-4 h-4 bg-gray-100/80 rounded-full"></span>
                     </div>
                     <div>
-                      <h3 className="text-base sm:text-lg md:text-xl 2xmd:text-lg lg:text-xl font-bold text-white">
+                      <h3 className="text-base sm:text-lg md:text-xl 2xmd:text-lg lg:text-xl 2xl:text-2xl font-bold text-white">
                         {exp.company}
                       </h3>
-                      <p className="text-sm sm:text-base md:text-lg 2xmd:text-base italic text-white">
+                      <p className="text-sm sm:text-base md:text-lg 2xmd:text-base 2xl:text-lg italic text-white">
                         {exp.role}
                       </p>
-                      <p className="text-xs sm:text-sm md:text-base 2xmd:text-sm text-white">
+                      <p className="text-xs sm:text-sm md:text-base 2xmd:text-sm 2xl:text-base text-white">
                         {exp.duration}
                       </p>
                     </div>

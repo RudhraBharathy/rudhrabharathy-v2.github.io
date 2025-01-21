@@ -32,7 +32,7 @@ const Projects = () => {
         <div
           className="flex items-center justify-center w-full pb-3"
           style={{
-            transform: isHovered || isMobile ? "translateY(10px)" : "translateY(30px)",
+            transform: isHovered || isMobile ? "translateY(10px)" : "translateY(35px)",
             transition: ".3s all ease-in",
           }}
         >
