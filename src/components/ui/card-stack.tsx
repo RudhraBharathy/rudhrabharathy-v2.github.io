@@ -107,7 +107,7 @@ export const CardStack = ({
         >
           <div className="w-full flex justify-between items-center flex-col sm:flex-row sm:items-start gap-3">
             <div className="flex justify-between items-start flex-col w-full gap-2">
-              <p className="2xs:text-lg text-2xl font-bold">
+              <p className="2xs:text-lg xl:text-2xl font-bold">
                 {activeCard.name}
               </p>
               <p className="2xs:text-xs sm:text-sm lg:text-xs 2xl:text-sm">

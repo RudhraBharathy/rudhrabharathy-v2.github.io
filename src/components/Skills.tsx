@@ -61,7 +61,7 @@ const Skills = () => {
               src={icon.src}
               width={18}
               height={18}
-              className="2xs:w-7 2xs:h-7 2xl:w-8 2xl:h-8 w-6 h-6 transition duration-100 ease-in"
+              className="2xs:w-7 2xs:h-7 lg:w-8 lg:h-8 xl:w-7 xl:h-7 2xl:w-8 2xl:h-8 w-6 h-6 transition duration-100 ease-in"
               style={{
                 transition: "transform .1s ease-in-out",
               }}

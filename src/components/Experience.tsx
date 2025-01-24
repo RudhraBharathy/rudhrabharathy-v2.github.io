@@ -37,8 +37,8 @@ const Experience = () => {
       pointerBgColor={0}
     >
       <WobbleCard
-        customFlexClasses="h-full flex justify-start items-center 2xs:cursor-default xl:cursor-none"
-        containerClassName="h-full bg-[#0b525b] relative"
+        customFlexClasses="relative h-full flex justify-start items-center 2xs:cursor-default xl:cursor-none"
+        containerClassName="h-full bg-[#0b525b]"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={() => setIsHovered(true)}

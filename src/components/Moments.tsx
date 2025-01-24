@@ -68,12 +68,11 @@ const Moments = () => {
                 setShowTitle(false);
               }}
               onMouseLeave={() => {
-                setIsHovered(false);
                 setShowTitle(true);
               }}
             >
               <h1
-                className="text-3xl sm:text-4xl md:text-5xl xl:text-[2.7rem] 2xl:text-5xl text-[#FFFFFF] transition-transform duration-300 ease-in-out xl:hover:scale-125"
+                className="text-4xl md:text-5xl xl:text-[2.7rem] 2xl:text-5xl text-[#FFFFFF] transition-transform duration-300 ease-in-out xl:hover:scale-125"
                 aria-label={`Letter ${value.letter}`}
               >
                 {value.letter}
@@ -82,7 +81,7 @@ const Moments = () => {
           ))}
         </div>
         <GrGallery
-          className="absolute bottom-6 right-6"
+          className="absolute bottom-5 right-6"
           size={30}
           color="#FFFFFF"
         />

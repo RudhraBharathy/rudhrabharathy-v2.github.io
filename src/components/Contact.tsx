@@ -38,14 +38,14 @@ const Contact = () => {
         onClick={() => setIsHovered(true)}
       >
         <div className="flex justify-start items-start flex-col absolute bottom-4 left-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl text-[#FFFFFF] leading-tight">
+          <h1 className="text-4xl md:text-5xl text-[#FFFFFF] leading-tight">
             Contact
             {isSmallScreen ? <> </> : <br />}
             Me
           </h1>
         </div>
         <GrContactInfo
-          className="absolute bottom-4 right-4"
+          className="absolute bottom-3 right-6"
           size={35}
           color="#FFFFFF"
         />

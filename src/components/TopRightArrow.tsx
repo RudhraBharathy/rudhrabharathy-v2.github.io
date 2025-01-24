@@ -1,5 +1,6 @@
+import Image from "next/image";
 import React from "react";
-import { GoArrowUpRight } from "react-icons/go";
+import ArrowUpRight from "/public/svg/arrowUpRight.svg";
 
 interface TopRightArrowProps {
   isHovered: boolean;
@@ -10,12 +11,18 @@ const TopRightArrow: React.FC<TopRightArrowProps> = ({ isHovered }) => {
     <div
       className="absolute"
       style={{
-        top: isHovered ? "0.5rem" : "1rem",
-        right: isHovered ? "0.5rem" : "1rem",
+        top: isHovered ? "1rem" : "1.5rem",
+        right: isHovered ? "1rem" : "1.5rem",
         transition: "top 0.2s ease, right 0.2s ease",
       }}
     >
-      <GoArrowUpRight color="#FFFFFF" className={`text-6xl`} />
+      <Image
+        loading="eager"
+        width={35}
+        height={35}
+        src={ArrowUpRight}
+        alt={"ArrowUpRight"}
+      />
     </div>
   );
 };
