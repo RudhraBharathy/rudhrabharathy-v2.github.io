@@ -123,8 +123,8 @@ function IconContainer({
   };
 
   const desktopSizes = {
-    width: [35, 55, 35],
-    height: [35, 55, 35],
+    width: [35, 50, 35],
+    height: [35, 50, 35],
     iconWidth: [20, 35, 20],
     iconHeight: [20, 35, 20],
   };

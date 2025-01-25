@@ -66,6 +66,7 @@ module.exports = {
         shimmer: "shimmer 0.5s linear forwards",
         "shimmer-reverse": "shimmer-reverse 0.5s linear forwards",
         "ping-slow": "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite",
+        "fade-in": "fade-in 0.5s ease-out forwards",
       },
       keyframes: {
         shimmer: {
@@ -87,6 +88,10 @@ module.exports = {
         ping: {
           "0%": { transform: "scale(1)", opacity: "1" },
           "75%, 100%": { transform: "scale(1.5)", opacity: "0" },
+        },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       screens: {
