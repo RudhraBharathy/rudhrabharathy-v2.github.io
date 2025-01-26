@@ -16,7 +16,7 @@ export default function Loading({ progress }: { progress: number }) {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="w-full h-screen bg-black flex flex-col items-center justify-center gap-8"
+          className="fixed inset-0 z-50 w-full h-screen bg-black flex flex-col items-center justify-center gap-8"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}

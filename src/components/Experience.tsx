@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { WobbleCard } from "./ui/wobble-card";
 import TopRIghtArrow from "./TopRightArrow";
-import { motion } from "framer-motion";
 import { FollowerPointerCard } from "./ui/following-pointer";
 
 const experiences = [
@@ -45,20 +44,11 @@ const Experience = () => {
       >
         <div className="pl-5 xl:pl-12">
           <div className="flex justify-start items-start flex-col">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-4"
-            ></motion.div>
+            <div className="text-center mb-4"></div>
             <div className="relative border-l border-gray-300/50">
               {experiences.map((exp, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
                   className="mb-6 2xmd:mb-4 lg:mb-6 2xl:mb-7 pl-7"
                 >
                   <div className="group">
@@ -77,7 +67,7 @@ const Experience = () => {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
